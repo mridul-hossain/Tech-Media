@@ -19,7 +19,7 @@ session_start();
 </head>
 
 <body>
-     <div class="side_bar_nav column" id="col-1">
+     <div>
           <ul>
                <li> <a href="adminDashboard.php" class="text_angel">Home</a> </li>
                <li> <a href="#" class="text_angel">Add Admin</a> </li>
