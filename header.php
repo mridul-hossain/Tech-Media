@@ -6,7 +6,7 @@
 </head>
 
 <body>
-	<div style="position: relative; top: -30px;"><img src="logo.png" style="height: 200px; width: 200px"></div>
+	<div style="position: relative; top: -30px;"><img src="../logo.png" style="height: 200px; width: 200px"></div>
 	<a href="home.php" style="position: relative; top: -90px; padding-left: 80%;">Home</a>
 	<label style="position: relative; top: -90px;">|</label>
 	<a href="login.php" style="position: relative; top: -90px;">Login</a>

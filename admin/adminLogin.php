@@ -15,9 +15,7 @@ session_start();
 </head>
 
 <body>
-    <?php
-    include '../header.php';
-    ?>
+
     <div class="container form-input" id="login_form_admin">
         <form method="post" action="../controllers/Admin_Login_Control.php">
             <h2 class="center_align upper_txt">Adminstrator Login</h2>
@@ -43,9 +41,7 @@ session_start();
 
         </form>
     </div>
-    <?php
-    include '../footer.php';
-    ?>
+
 </body>
 
 </html>
