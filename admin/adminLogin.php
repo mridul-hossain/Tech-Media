@@ -6,7 +6,7 @@ $usernameErr = "";
 $passwordErr = "";
 $validateInfo = true;
 $usernameFound = false;
-$conn = new mysqli("localhost", "root", "", "socialsite");
+$conn = new mysqli("localhost", "root", "", "project_db");
 
 
 /*if(!isset($_SESSION['proceed']))
