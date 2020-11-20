@@ -1,2 +1,2 @@
-# Tech-based-Social-Media
+# Tech-Media
 Group project for Web Technologies course
