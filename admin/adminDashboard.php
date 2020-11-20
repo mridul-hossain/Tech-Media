@@ -3,7 +3,7 @@ session_start();
 /* if(!isset($_SESSION['adminUsername']))
       {
           session_destroy();
-          header("location:securityCode.php");
+          header("location:adminLogin.php");
       }
       $adminUsername=$_SESSION['adminUsername'];*/
 ?>
@@ -19,6 +19,9 @@ session_start();
 </head>
 
 <body>
+     <?php
+     include '../header.php';
+     ?>
      <div>
           <ul>
                <li> <a href="adminDashboard.php" class="text_angel">Home</a> </li>
@@ -29,7 +32,9 @@ session_start();
      <div class="welcome_text column" id="col-2">
           <h2 class="text_dark center_align">Welcome User <?php echo $adminUsername; ?> </h2>
      </div>
-
+     <?php
+     include '../footer.php';
+     ?>
 </body>
 
 </html>
