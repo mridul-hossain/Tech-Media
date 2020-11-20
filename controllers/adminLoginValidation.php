@@ -42,6 +42,6 @@ if (isset($_POST['login'])) {
     }
     if ($validateInfo) {
         $_SESSION['adminUsername'] = $username;
-        header("location:adminDashboard.php");
+        header("location:../admin/adminDashboard.php");
     }
 }
