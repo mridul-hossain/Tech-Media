@@ -20,7 +20,7 @@ session_start();
 
 <body>
      <?php
-     include '../header_admin.php';
+     include 'header_admin.php';
      ?>
      <div>
           <ul>

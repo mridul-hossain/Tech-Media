@@ -18,6 +18,10 @@ session_start();
 
     <div class="container form-input" id="login_form_admin">
         <form method="post" action="../controllers/Admin_Login_Control.php">
+            <?php
+            $_SESSION['username'] = 'admin';
+            $_SESSION['password'] = '1234';
+            ?>
             <h2 class="center_align upper_txt">Adminstrator Login</h2>
 
             <div class="credential_input">

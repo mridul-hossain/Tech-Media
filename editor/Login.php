@@ -14,7 +14,7 @@ session_start();
 
 	<?php include '../header.php'; ?>
 
-	<form action="Controller/Login_Control.php" method="post">
+	<form action="../controllers/Editor_Login_Control.php" method="post">
 
 		<?php
 		$_SESSION['username'] = 'mridul';
