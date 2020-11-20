@@ -1,9 +1,6 @@
 <?php
 session_start();
-/*if (!isset($_SESSION['proceed'])) {
-    session_destroy();
-    header("location:securityCode.php");
-}*/
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +31,7 @@ session_start();
                 <br>
                 <label class="med_font">Password</label>
                 <br>
-                <input type="password" name="password" placeholder="Enter Admin Password">
+                <input type="text" name="password" placeholder="Enter Admin Password">
                 <br>
                 <label class="sml_font text_error"> <?php echo $passwordErr; ?></label>
                 <input type="hidden" name="uname" value="<?php echo $_SESSION['username'] ?>">
