@@ -8,13 +8,6 @@ $validateInfo = true;
 $usernameFound = false;
 $conn = new mysqli("localhost", "root", "", "project_db");
 
-
-/*if(!isset($_SESSION['proceed']))
-    {
-        session_destroy();
-        header("location:securityCode.php");
-    }*/
-
 if (isset($_POST['login'])) {
     if (!empty($_POST['username'])) {
         $username = htmlspecialchars($_POST['username']);

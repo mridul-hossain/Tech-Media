@@ -1,3 +1,10 @@
+<?php
+session_start();
+/*if (!isset($_SESSION['proceed'])) {
+    session_destroy();
+    header("location:securityCode.php");
+}*/
+?>
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +17,7 @@
 
 <body>
     <div class="container form-input" id="login_form_admin">
-        <form method="post" action="">
+        <form method="post" action="adminLoginValidation.php">
             <h2 class="center_align upper_txt">Adminstrator area</h2>
 
             <div class="credential_input">
