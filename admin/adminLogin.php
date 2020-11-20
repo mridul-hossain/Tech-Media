@@ -16,7 +16,7 @@ session_start();
 
 <body>
     <div class="container form-input" id="login_form_admin">
-        <form method="post" action="../controllers/adminLoginValidation.php">
+        <form method="post" action="../controllers/Admin_Login_Control.php">
             <h2 class="center_align upper_txt">Adminstrator Login</h2>
 
             <div class="credential_input">
