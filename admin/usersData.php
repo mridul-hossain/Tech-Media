@@ -23,7 +23,7 @@ session_start();
 
 <body>
      <?php
-     include '../header_admin.php';
+     include 'header_admin.php';
      ?>
      <div class="side_bar_nav column center_align" id="col-1">
           <ul>
@@ -41,9 +41,7 @@ session_start();
                </table>
           </div>
      </div>
-     <?php
-     include '../footer.php';
-     ?>
+
 </body>
 
 </html>

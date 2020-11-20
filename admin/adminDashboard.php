@@ -32,9 +32,7 @@ session_start();
      <div class="welcome_text column" id="col-2">
           <h2 class="text_dark center_align">Welcome User <?php echo $adminUsername; ?> </h2>
      </div>
-     <?php
-     include '../footer.php';
-     ?>
+
 </body>
 
 </html>
