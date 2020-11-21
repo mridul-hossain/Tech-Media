@@ -59,7 +59,6 @@ session_start();
                     <th>Address</th>
                     <th>City</th>
                     <th>Counry</th>
-
                     <th>DOB</th>
                     <th>Image</th>
                 </tr>
@@ -204,7 +203,9 @@ session_start();
             </table>
         </form>
     </div>
-
+    <?php
+    include '../footer.php';
+    ?>
 </body>
 
 </html>

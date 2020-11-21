@@ -3,12 +3,23 @@
 
 <head>
 	<title></title>
+	<style>
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background-color: #f1f1f1;
+			color: dodgerblue;
+			text-align: center;
+		}
+	</style>
 </head>
 
 <body>
-
-	<div style="width: 100%; border-top: 2px solid gray; position: absolute; bottom: 30px;"></div>
-	<div style="position: absolute; bottom: 5px; padding-left: 45%"><?php echo "For reporting any issue, please contact with admin at admin@techmedia.com" ?></div>
+	<div class="footer">
+		<p>Copyright &#169;2020</p>
+	</div>
 
 </body>
 

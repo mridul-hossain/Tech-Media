@@ -22,7 +22,9 @@ session_start();
                <h1 class="text_dark center_align">Welcome Admin <span style="color: dodgerblue;"><?php echo $_SESSION['username']; ?></span> </h1>
           </div>
      </div>
-
+     <?php
+     include '../footer.php';
+     ?>
 </body>
 
 </html>

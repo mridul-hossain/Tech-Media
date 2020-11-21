@@ -204,7 +204,9 @@ session_start();
                </table>
           </form>
      </div>
-
+     <?php
+     include '../footer.php';
+     ?>
 </body>
 
 </html>
