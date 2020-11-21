@@ -1,36 +1,89 @@
-<?php
-session_start();
-if (!isset($_SESSION['username'])) {
-     session_destroy();
-     header("location:adminLogin.php");
-}
-?>
-
-
 <!DOCTYPE html>
 <html>
 
 <head>
-     <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" type="text/css" href="adminDashboard.css">
 </head>
 
 <body>
-
      <?php
      include 'header_admin.html';
      ?>
-     <?php
-     include 'sidebar_admin.html';
-     ?>
-
-     <div class="content">
-          <h2>Responsive Sidebar Example</h2>
-          <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
-          <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
-          <h3>Resize the browser window to see the effect.</h3>
+     <div class="sidenav">
+          <a href="adminDashboard.php">Home</a>
+          <a href="editorsData.php">Editors Data</a>
+          <a href="usersData.php">Users Data</a>
+          <a href="addAdmin.php">Add Admin</a>
+          <a href="addEditor.php">Add Editor</a>
      </div>
+
+     <div class="main">
+          <form style="padding: 15px;" action="Registration.php">
+               <div style="background-color:  #e6f0ff; text-align: left; border-radius: 2px; width: 500px; padding: 6px; left: 30%; position: relative;">
+                    <label style="font-size: 25px;"><span style="font-weight: bold;">Mr. Cat</span></label><br>
+                    <label style="font-size: 10px;">Date: 19.11.2020</label>
+                    <label style="font-size: 10px;">Time: 11:34pm</label>
+                    <div style="background-color: white; border-radius: 2px;">
+                         <p>All the top border properties in one declaration
+                              This example demonstrates a shorthand property for setting all of the properties for the top border in one declaration.
+
+                              Set the style of the bottom border
+                              This example demonstrates how to set the style of the bottom border.
+
+                              Set the width of the left border
+                              This example demonstrates how to set the width of the left border.
+
+                              Set the color of the four borders
+                              This example demonstrates how to set the color of the four borders. It can have from one to four colors.
+
+                              Set the color of the right border
+                              This example demonstrates how to set the color of the right border.</p><br>
+                    </div><br>
+                    <label style="font-size: 18px;"><span style="font-weight: bold;">Scooby:</span> </label>
+                    <label> Its a dummy comment.</label><br><br>
+                    <input type="text" name="comment" style="width: 400px;">
+                    <input type="submit" name="submit" value="Comment">
+               </div>
+          </form>
+
+          <form style="padding: 15px;" action="Registration.php">
+               <div style="background-color:  #e6f0ff; text-align: left; border-radius: 2px; width: 500px; padding: 6px; left: 30%; position: relative;">
+                    <label style="font-size: 25px;"><span style="font-weight: bold;">Mr. Scooby</span></label><br>
+                    <label style="font-size: 10px;">Date: 19.11.2020</label>
+                    <label style="font-size: 10px;">Time: 11:34pm</label>
+                    <div style="background-color: white; border-radius: 2px;">
+                         <p>All modern browsers support the following 140 color names (click on a color name, or a hex value, to view the color as the background-color along with different text colors)</p><br>
+                    </div><br>
+                    <label style="font-size: 18px;"><span style="font-weight: bold;">Scooby:</span> </label>
+                    <label> Its a dummy comment.</label><br><br>
+                    <input type="text" name="comment" style="width: 400px;">
+                    <input type="submit" name="submit" value="Comment">
+               </div>
+          </form>
+
+          <form style="padding: 15px;" action="Registration.php">
+               <div style="background-color:  #e6f0ff; text-align: left; border-radius: 2px; width: 500px; padding: 6px; left: 30%; position: relative;">
+                    <label style="font-size: 25px;"><span style="font-weight: bold;">Mr. Brad</span></label><br>
+                    <label style="font-size: 10px;">Date: 19.11.2020</label>
+                    <label style="font-size: 10px;">Time: 11:34pm</label>
+                    <div style="background-color: white; border-radius: 2px;">
+                         <p>Web pages can be created and modified by using professional HTML editors.
+
+                              However, for learning HTML we recommend a simple text editor like Notepad (PC) or TextEdit (Mac).
+
+                              We believe in that using a simple text editor is a good way to learn HTML.
+
+                              Follow the steps below to create your first web page with Notepad or TextEdit.</p><br>
+                    </div><br>
+                    <label style="font-size: 18px;"><span style="font-weight: bold;">Scooby:</span> </label>
+                    <label> Its a dummy comment.</label><br><br>
+                    <input type="text" name="comment" style="width: 400px;">
+                    <input type="submit" name="submit" value="Comment">
+               </div>
+          </form>
+     </div>
+
 </body>
 
 </html>
