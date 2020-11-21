@@ -12,34 +12,31 @@ session_start();
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-     <meta charset="utf-8">
+     <title>Users data</title>
+     <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" type="text/css" href="../basicstyling.css">
      <link rel="stylesheet" type="text/css" href="adminDashboard.css">
 </head>
 
 <body>
-     <?php
-     include 'header_admin.php';
-     ?>
-     <div class="side_bar_nav column center_align" id="col-1">
-          <ul>
-               <li> <a href="adminDashboard.php" class="text_angel">Home</a> </li>
-               <li> <a href="#" class="text_angel">Add Admin</a> </li>
-               <li> <a href="usersData.php" class="text_angel">Users Data</a> </li>
-          </ul>
+
+     <div class="header">
+          <div style=" position: relative; top: -30px;"><img src="../logo.png" style="height: 200px; width: 200px"></div>
+          <h3>World's largest social media for tech geeks</h3>
+          <label style=";">Logged in as <?php echo $_SESSION['username']; ?> | </label>
+          <a href="adminDashboard.php" ">Dashboard</a>
+          <label >|</label>
+               <a href=" adminLogout.php">Logout</a>
      </div>
-     <div class="column" id="col-2">
-          <div class="display_table_data">
-               <table class="center_align">
-                    <tr>
-                         <h1>Hello World!</h2>
-                    </tr>
-               </table>
-          </div>
+
+     <div class="content">
+          <h1>Content</h1>
+          <p>Some content blablabla, some content blablabla.</p>
+          <p>Some content blablabla, some content blablabla.</p>
+          <p>Some content blablabla, some content blablabla.</p>
      </div>
 
 </body>
