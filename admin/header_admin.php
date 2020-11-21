@@ -2,19 +2,77 @@
 <html>
 
 <head>
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            padding: 20px 10px;
+        }
+
+        .header a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 25px;
+            border-radius: 4px;
+        }
+
+        .header a.logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .header a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .header a.active {
+            background-color: dodgerblue;
+            color: white;
+        }
+
+        .header-right {
+            float: right;
+        }
+
+        @media screen and (max-width: 500px) {
+            .header a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .header-right {
+                float: none;
+            }
+        }
+    </style>
 </head>
 
-<body ">
-    <div style=" position: relative; top: -30px;"><img src="../logo.png" style="height: 200px; width: 200px"></div>
-    <label style="position: relative; top: -90px; padding-left: 80%;">Logged in as <?php echo $_SESSION['username']; ?> | </label>
-    <a href="adminDashboard.php" style="position: relative; top: -90px;">Dashboard</a>
-    <label style="position: relative; top: -90px;">|</label>
-    <a href="adminLogout.php" style="position: relative; top: -90px;">Logout</a>
-    <div style="width: 100%; border-top: 2px solid gray;position: relative; top: -85px;"></div>
+<body>
 
-
-
+    <div class="header">
+        <a href="#default" class="logo"><img src=" ../logo.png" style="height: 150px; width: 150px"></a>
+        <div class="header-right">
+            <a class="active" href="adminDashboard.php">Dashboard</a>
+            <a href="#">Notification</a>
+            <a href="adminLogout.php">Logout</a>
+        </div>
+    </div>
 </body>
 
 </html>

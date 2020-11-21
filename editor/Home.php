@@ -8,7 +8,7 @@
 <body>
 
 	<?php
-	include '../header.php';
+	include '../Header_Editor.php';
 	?>
 
 

@@ -1,44 +1,34 @@
 <?php
 session_start();
-/* if(!isset($_SESSION['adminUsername']))
-      {
-          session_destroy();
-          header("location:securityCode.php");
-      }
-      $adminUsername=$_SESSION['adminUsername'];*/
+if (!isset($_SESSION['username'])) {
+     session_destroy();
+     header("location:adminLogin.php");
+}
 ?>
 
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-     <title>Users data</title>
-     <meta charset="UTF-8">
+     <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" type="text/css" href="adminDashboard.css">
 </head>
 
 <body>
-
-     <div class="header">
-          <div style=" position: relative; top: -30px;"><img src="../logo.png" style="height: 200px; width: 200px"></div>
-          <h3>World's largest social media for tech geeks</h3>
-          <label style=";">Logged in as <?php echo $_SESSION['username']; ?> | </label>
-          <a href="adminDashboard.php" ">Dashboard</a>
-          <label >|</label>
-               <a href=" adminLogout.php">Logout</a>
+     <?php
+     include 'header_admin.php';
+     ?>
+     <div>
+          <ul>
+               <li> <a href="adminDashboard.php" class="text_angel">Home</a> </li>
+               <li> <a href="#" class="text_angel">Add Admin</a> </li>
+               <li> <a href="usersData.php" class="text_angel">Users Data</a> </li>
+          </ul>
      </div>
-
-     <div class="content">
-          <h1>Content</h1>
-          <p>Some content blablabla, some content blablabla.</p>
-          <p>Some content blablabla, some content blablabla.</p>
-          <p>Some content blablabla, some content blablabla.</p>
+     <div class="welcome_text column" id="col-2">
+          <h2 class="text_dark center_align">Welcome User <?php echo $_SESSION['username']; ?> </h2>
      </div>
-
 </body>
 
 </html>

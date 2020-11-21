@@ -1,11 +1,9 @@
 <?php
 session_start();
-/* if(!isset($_SESSION['adminUsername']))
-      {
-          session_destroy();
-          header("location:adminLogin.php");
-      }
-      $adminUsername=$_SESSION['adminUsername'];*/
+if (!isset($_SESSION['username'])) {
+     session_destroy();
+     header("location:adminLogin.php");
+}
 ?>
 
 
@@ -30,7 +28,7 @@ session_start();
           </ul>
      </div>
      <div class="welcome_text column" id="col-2">
-          <h2 class="text_dark center_align">Welcome User <?php echo $adminUsername; ?> </h2>
+          <h2 class="text_dark center_align">Welcome User <?php echo $_SESSION['username']; ?> </h2>
      </div>
 
 </body>

@@ -37,7 +37,7 @@ session_start();
                 <input type="hidden" name="uname" value="<?php echo $_SESSION['username'] ?>">
                 <input type="hidden" name="pass" value="<?php echo $_SESSION['password'] ?>">
                 <div class="login_btn">
-                    <input type="submit" name="login" value="Login">
+                    <input type="submit" name="submit" value="Login">
                 </div>
 
             </div>
