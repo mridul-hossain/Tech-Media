@@ -17,19 +17,26 @@ if (!isset($_SESSION['username'])) {
 </head>
 
 <body>
+
      <?php
      include 'header_admin.php';
      ?>
-     <div>
-          <ul>
-               <li> <a href="adminDashboard.php" class="text_angel">Home</a> </li>
-               <li> <a href="#" class="text_angel">Add Admin</a> </li>
-               <li> <a href="usersData.php" class="text_angel">Users Data</a> </li>
-          </ul>
+     <div class="sidebar">
+          <a class="active" href="#home">Home</a>
+          <a href="#news">News</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
      </div>
-     <div class="welcome_text column" id="col-2">
-          <h2 class="text_dark center_align">Welcome User <?php echo $_SESSION['username']; ?> </h2>
+
+     <div class="content">
+          <h2>Responsive Sidebar Example</h2>
+          <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
+          <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
+          <h3>Resize the browser window to see the effect.</h3>
      </div>
+
+
+
 
 </body>
 
