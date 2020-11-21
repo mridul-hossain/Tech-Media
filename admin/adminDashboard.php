@@ -19,7 +19,7 @@ session_start();
 
      <div class="main">
           <div class="welcome_text column" id="col-2">
-               <h2 class="text_dark center_align">Welcome Admin <span style="color: dodgerblue;"><?php echo $_SESSION['username']; ?></span> </h2>
+               <h1 class="text_dark center_align">Welcome Admin <span style="color: dodgerblue;"><?php echo $_SESSION['username']; ?></span> </h1>
           </div>
      </div>
 

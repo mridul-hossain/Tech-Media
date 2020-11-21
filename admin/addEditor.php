@@ -8,6 +8,31 @@ session_start();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="adminDashboard.css">
+    <style>
+        input,
+        select {
+            width: 250px;
+            border-color: rgba(3, 133, 255, 0.767);
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        input[type=submit],
+        input[type=reset] {
+            background-color: rgb(92, 151, 222);
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,8 +43,10 @@ session_start();
 
     <div class="main">
         <form action="controller/createUser.php" method="POST" enctype="multipart/form-data">
-            <fieldset>
-                <legend>Add Editor  </legend>
+            <fieldset style="border-color: dodgerblue; border-radius: 8px;border-style: inset;">
+                <legend>Add Editor </legend>
+                <label for=" name">Username:</label><br>
+                <input type="text" id="uname" name="uname"><br>
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name"><br>
                 <label for="email">Email:</label><br>
@@ -42,11 +69,10 @@ session_start();
                 <input type="date" id="birthday" name="birthday"><br>
                 <label for="password">Password:</label><br>
                 <input type="password" id="password" name="password"><br><br>
-                <hr>
                 <input type="submit" name="createUser" value="Create">
                 <input type="reset">
             </fieldset>
-
+            <br>
         </form>
     </div>
 

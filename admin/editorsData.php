@@ -8,6 +8,35 @@ session_start();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="adminDashboard.css">
+    <style>
+        #list {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #list td,
+        #list th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #list tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #list tr:hover {
+            background-color: #ddd;
+        }
+
+        #list th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: dodgerblue;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,94 +46,161 @@ session_start();
     ?>
 
     <div class="main">
+        <br>
         <form>
-            <table style="border: 2px solid black;">
-                <thead>
-                    <tr>
-                        <th style="border: 2px solid black;">ID</th>
-                        <th style="border: 2px solid black;">Username</th>
-                        <th style="border: 2px solid black;">Name</th>
-                        <th style="border: 2px solid black;">Password</th>
-                        <th style="border: 2px solid black;">Email</th>
-                        <th style="border: 2px solid black;">Phone</th>
-                        <th style="border: 2px solid black;">Address</th>
-                        <th style="border: 2px solid black;">City</th>
-                        <th style="border: 2px solid black;">Counry</th>
+            <table id="list">
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Counry</th>
 
-                        <th style="border: 2px solid black;">DOB</th>
-                        <th style="border: 2px solid black;">Image</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th style="border: 2px solid black;">1</th>
-                        <th style="border: 2px solid black;">nafis</th>
-                        <th style="border: 2px solid black;">nafisur Rahman</th>
-                        <th style="border: 2px solid black;">1234</th>
-                        <th style="border: 2px solid black;">nfa@gmail.com</th>
-                        <th style="border: 2px solid black;">012345678902</th>
-                        <th style="border: 2px solid black;">khilgaon</th>
-                        <th style="border: 2px solid black;">Dhaka</th>
-                        <th style="border: 2px solid black;">Bangladesh</th>
-                        <th style="border: 2px solid black;">12-03-99</th>
-                        <th style="border: 2px solid black;">null</th>
+                    <th>DOB</th>
+                    <th>Image</th>
+                </tr>
 
-                        <td style="border: 2px solid black;"><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                        <td style="border: 2px solid black;"><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                <tr>
+                    <td>1</td>
+                    <td>nafis</td>
+                    <td>nafisur Rahman</td>
+                    <td>1234</td>
+                    <td>nfa@gmail.com</td>
+                    <td>012345678902</td>
+                    <td>khilgaon</td>
+                    <td>Dhaka</td>
+                    <td>Bangladesh</td>
+                    <td>12-03-99</td>
+                    <td>null</td>
 
-                    </tr>
-                    <tr>
-                        <th style="border: 2px solid black;">2</th>
-                        <th style="border: 2px solid black;">nafis</th>
-                        <th style="border: 2px solid black;">nafisur Rahman</th>
-                        <th style="border: 2px solid black;">1234</th>
-                        <th style="border: 2px solid black;">nfa@gmail.com</th>
-                        <th style="border: 2px solid black;">012345678902</th>
-                        <th style="border: 2px solid black;">khilgaon</th>
-                        <th style="border: 2px solid black;">Dhaka</th>
-                        <th style="border: 2px solid black;">Bangladesh</th>
-                        <th style="border: 2px solid black;">12-03-99</th>
-                        <th style="border: 2px solid black;">null</th>
+                    <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
+                    <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
 
-                        <td style="border: 2px solid black;"><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                        <td style="border: 2px solid black;"><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>nafis</td>
+                    <td>nafisur Rahman</td>
+                    <td>1234</td>
+                    <td>nfa@gmail.com</td>
+                    <td>012345678902</td>
+                    <td>khilgaon</td>
+                    <td>Dhaka</td>
+                    <td>Bangladesh</td>
+                    <td>12-03-99</td>
+                    <td>null</td>
 
-                    </tr>
-                    <tr>
-                        <th style="border: 2px solid black;">3</th>
-                        <th style="border: 2px solid black;">nafis</th>
-                        <th style="border: 2px solid black;">nafisur Rahman</th>
-                        <th style="border: 2px solid black;">1234</th>
-                        <th style="border: 2px solid black;">nfa@gmail.com</th>
-                        <th style="border: 2px solid black;">012345678902</th>
-                        <th style="border: 2px solid black;">khilgaon</th>
-                        <th style="border: 2px solid black;">Dhaka</th>
-                        <th style="border: 2px solid black;">Bangladesh</th>
-                        <th style="border: 2px solid black;">12-03-99</th>
-                        <th style="border: 2px solid black;">null</th>
+                    <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
+                    <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
 
-                        <td style="border: 2px solid black;"><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                        <td style="border: 2px solid black;"><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>nafis</td>
+                    <td>nafisur Rahman</td>
+                    <td>1234</td>
+                    <td>nfa@gmail.com</td>
+                    <td>012345678902</td>
+                    <td>khilgaon</td>
+                    <td>Dhaka</td>
+                    <td>Bangladesh</td>
+                    <td>12-03-99</td>
+                    <td>null</td>
 
-                    </tr>
-                    <tr>
-                        <th style="border: 2px solid black;">4</th>
-                        <th style="border: 2px solid black;">nafis</th>
-                        <th style="border: 2px solid black;">nafisur Rahman</th>
-                        <th style="border: 2px solid black;">1234</th>
-                        <th style="border: 2px solid black;">nfa@gmail.com</th>
-                        <th style="border: 2px solid black;">012345678902</th>
-                        <th style="border: 2px solid black;">khilgaon</th>
-                        <th style="border: 2px solid black;">Dhaka</th>
-                        <th style="border: 2px solid black;">Bangladesh</th>
-                        <th style="border: 2px solid black;">12-03-99</th>
-                        <th style="border: 2px solid black;">null</th>
+                    <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
+                    <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
 
-                        <td style="border: 2px solid black;"><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                        <td style="border: 2px solid black;"><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>nafis</td>
+                    <td>nafisur Rahman</td>
+                    <td>1234</td>
+                    <td>nfa@gmail.com</td>
+                    <td>012345678902</td>
+                    <td>khilgaon</td>
+                    <td>Dhaka</td>
+                    <td>Bangladesh</td>
+                    <td>12-03-99</td>
+                    <td>null</td>
 
-                    </tr>
-                </tbody>
+                    <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
+                    <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>nafis</td>
+                    <td>nafisur Rahman</td>
+                    <td>1234</td>
+                    <td>nfa@gmail.com</td>
+                    <td>012345678902</td>
+                    <td>khilgaon</td>
+                    <td>Dhaka</td>
+                    <td>Bangladesh</td>
+                    <td>12-03-99</td>
+                    <td>null</td>
+
+                    <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
+                    <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>nafis</td>
+                    <td>nafisur Rahman</td>
+                    <td>1234</td>
+                    <td>nfa@gmail.com</td>
+                    <td>012345678902</td>
+                    <td>khilgaon</td>
+                    <td>Dhaka</td>
+                    <td>Bangladesh</td>
+                    <td>12-03-99</td>
+                    <td>null</td>
+
+                    <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
+                    <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>nafis</td>
+                    <td>nafisur Rahman</td>
+                    <td>1234</td>
+                    <td>nfa@gmail.com</td>
+                    <td>012345678902</td>
+                    <td>khilgaon</td>
+                    <td>Dhaka</td>
+                    <td>Bangladesh</td>
+                    <td>12-03-99</td>
+                    <td>null</td>
+
+                    <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
+                    <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>nafis</td>
+                    <td>nafisur Rahman</td>
+                    <td>1234</td>
+                    <td>nfa@gmail.com</td>
+                    <td>012345678902</td>
+                    <td>khilgaon</td>
+                    <td>Dhaka</td>
+                    <td>Bangladesh</td>
+                    <td>12-03-99</td>
+                    <td>null</td>
+
+                    <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
+                    <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+
+                </tr>
+
             </table>
         </form>
     </div>
