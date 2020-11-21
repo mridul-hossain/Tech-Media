@@ -2,14 +2,8 @@
     margin-left: 220px;
     /* Same width as the sidebar + left position in px */
     font-size: 15px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    display: inline-block;
     /* Increased text to enable scrolling */
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-    .sidenav a {
-        font-size: 18px;
-    }
 }
