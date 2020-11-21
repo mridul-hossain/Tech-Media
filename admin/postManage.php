@@ -39,9 +39,10 @@ session_start();
                         This example demonstrates how to set the color of the right border.</p><br>
                 </div><br>
                 <label style="font-size: 18px;"><span style="font-weight: bold;">Scooby:</span> </label>
-                <label> Its a dummy comment.</label><br><br>
-                <input type="text" name="comment" style="width: 400px;">
-                <input type="submit" name="submit" value="Comment">
+                <label> Its a dummy comment.</label>
+                <input type="submit" name="submit" value="Hide this comment">
+                <br><br>
+                <input type="submit" name="submit" value="Hide this post">
             </div>
         </form>
 
@@ -54,9 +55,10 @@ session_start();
                     <p>All modern browsers support the following 140 color names (click on a color name, or a hex value, to view the color as the background-color along with different text colors)</p><br>
                 </div><br>
                 <label style="font-size: 18px;"><span style="font-weight: bold;">Scooby:</span> </label>
-                <label> Its a dummy comment.</label><br><br>
-                <input type="text" name="comment" style="width: 400px;">
-                <input type="submit" name="submit" value="Comment">
+                <label> Its a dummy comment.</label>
+                <input type="submit" name="submit" value="Hide this comment">
+                <br><br>
+                <input type="submit" name="submit" value="Hide this post">
             </div>
         </form>
 
@@ -75,9 +77,10 @@ session_start();
                         Follow the steps below to create your first web page with Notepad or TextEdit.</p><br>
                 </div><br>
                 <label style="font-size: 18px;"><span style="font-weight: bold;">Scooby:</span> </label>
-                <label> Its a dummy comment.</label><br><br>
-                <input type="text" name="comment" style="width: 400px;">
-                <input type="submit" name="submit" value="Comment">
+                <label> Its a dummy comment.</label>
+                <input type="submit" name="submit" value="Hide this comment">
+                <br><br>
+                <input type="submit" name="submit" value="Hide this post">
             </div>
         </form>
     </div>

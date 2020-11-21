@@ -3,7 +3,6 @@
     /* Same width as the sidebar + left position in px */
     font-size: 15px;
     padding-top: 60px;
-    padding-bottom: 40px;
-    display: inline-block;
+    padding-bottom: 250px;
     /* Increased text to enable scrolling */
 }
