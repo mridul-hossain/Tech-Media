@@ -43,6 +43,15 @@ body {
     float: right;
 }
 
+.header input[type=text] {
+    float: left;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    border: none;
+    font-size: 17px;
+}
+
 @media screen and (max-width: 500px) {
     .header a {
         float: none;

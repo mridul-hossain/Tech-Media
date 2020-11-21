@@ -19,14 +19,11 @@ if (!isset($_SESSION['username'])) {
 <body>
 
      <?php
-     include 'header_admin.php';
+     include 'header_admin.html';
      ?>
-     <div class="sidebar">
-          <a class="active" href="#home">Home</a>
-          <a href="#news">News</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
-     </div>
+     <?php
+     include 'sidebar_admin.html';
+     ?>
 
      <div class="content">
           <h2>Responsive Sidebar Example</h2>
@@ -34,10 +31,6 @@ if (!isset($_SESSION['username'])) {
           <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
           <h3>Resize the browser window to see the effect.</h3>
      </div>
-
-
-
-
 </body>
 
 </html>
