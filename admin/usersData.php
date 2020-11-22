@@ -77,8 +77,8 @@ session_start();
                          <td>12-03-99</td>
                          <td>null</td>
 
-                         <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                         <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                         <td><a href="editUser.php?name=<?php echo $User['Name'] ?>">Edit</a></td>
+                         <td><a href="deleteUser.php?name=<?php echo $User['Name'] ?>">Delete</a></td>
 
                     </tr>
                     <tr>
@@ -94,8 +94,8 @@ session_start();
                          <td>12-03-99</td>
                          <td>null</td>
 
-                         <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                         <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                         <td><a href="editUser.php?name=<?php echo $User['Name'] ?>">Edit</a></td>
+                         <td><a href="deleteUser.php?name=<?php echo $User['Name'] ?>">Delete</a></td>
 
                     </tr>
                     <tr>
@@ -111,8 +111,8 @@ session_start();
                          <td>12-03-99</td>
                          <td>null</td>
 
-                         <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                         <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                         <td><a href="editUser.php?name=<?php echo $User['Name'] ?>">Edit</a></td>
+                         <td><a href="deleteUser.php?name=<?php echo $User['Name'] ?>">Delete</a></td>
 
                     </tr>
                     <tr>
@@ -128,8 +128,8 @@ session_start();
                          <td>12-03-99</td>
                          <td>null</td>
 
-                         <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                         <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                         <td><a href="editUser.php?name=<?php echo $User['Name'] ?>">Edit</a></td>
+                         <td><a href="deleteUser.php?name=<?php echo $User['Name'] ?>">Delete</a></td>
 
                     </tr>
                     <tr>
@@ -145,8 +145,8 @@ session_start();
                          <td>12-03-99</td>
                          <td>null</td>
 
-                         <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                         <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                         <td><a href="editUser.php?name=<?php echo $User['Name'] ?>">Edit</a></td>
+                         <td><a href="deleteUser.php?name=<?php echo $User['Name'] ?>">Delete</a></td>
 
                     </tr>
                     <tr>
@@ -162,8 +162,8 @@ session_start();
                          <td>12-03-99</td>
                          <td>null</td>
 
-                         <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                         <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                         <td><a href="editUser.php?name=<?php echo $User['Name'] ?>">Edit</a></td>
+                         <td><a href="deleteUser.php?name=<?php echo $User['Name'] ?>">Delete</a></td>
 
                     </tr>
                     <tr>
@@ -179,8 +179,8 @@ session_start();
                          <td>12-03-99</td>
                          <td>null</td>
 
-                         <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                         <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                         <td><a href="editUser.php?name=<?php echo $User['Name'] ?>">Edit</a></td>
+                         <td><a href="deleteUser.php?name=<?php echo $User['Name'] ?>">Delete</a></td>
 
                     </tr>
                     <tr>
@@ -196,8 +196,8 @@ session_start();
                          <td>12-03-99</td>
                          <td>null</td>
 
-                         <td><a href="editProduct.php?name=<?php echo $product['Name'] ?>">Edit</a></td>
-                         <td><a href="deleteProduct.php?name=<?php echo $product['Name'] ?>">Delete</a></td>
+                         <td><a href="editUser.php?name=<?php echo $User['Name'] ?>">Edit</a></td>
+                         <td><a href="deleteUser.php?name=<?php echo $User['Name'] ?>">Delete</a></td>
 
                     </tr>
 
