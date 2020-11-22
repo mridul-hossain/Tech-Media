@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +10,15 @@
 <body>
 
 	<?php
-	include 'Header.php';
+	include 'Header_Editor.php';
 	?>
 
 
-	<form style="padding: 15px;" action="Registration.php">
+	<?php
+	include 'Index.php';
+	?>
+
+	<form style="padding: 15px;">
 		<div style="background-color:  #e6f0ff; text-align: left; border-radius: 2px; width: 500px; padding: 6px; left: 30%; position: relative;">
 			<label style="font-size: 25px;"><span style="font-weight: bold;">Mr. Cat</span></label><br>
 			<label style="font-size: 10px;">Date: 19.11.2020</label>
@@ -31,14 +39,11 @@ This example demonstrates how to set the color of the four borders. It can have 
 Set the color of the right border
 This example demonstrates how to set the color of the right border.</p><br>
 			</div><br>
-			<label style="font-size: 18px;"><span style="font-weight: bold;">Scooby:</span> </label>
-			<label> Its a dummy comment.</label><br><br>
-		<input type="text" name="comment" style="width: 400px;">
-		<input type="submit" name="submit" value="Comment">
+		<input type="submit" name="Aprrove" value="Approve">
 		</div>
 	</form>
 
-	<form style="padding: 15px;" action="Registration.php">
+	<form style="padding: 15px;">
 		<div style="background-color:  #e6f0ff; text-align: left; border-radius: 2px; width: 500px; padding: 6px; left: 30%; position: relative;">
 			<label style="font-size: 25px;"><span style="font-weight: bold;">Mr. Scooby</span></label><br>
 			<label style="font-size: 10px;">Date: 19.11.2020</label>
@@ -46,14 +51,11 @@ This example demonstrates how to set the color of the right border.</p><br>
 			<div style="background-color: white; border-radius: 2px;">
 				<p>All modern browsers support the following 140 color names (click on a color name, or a hex value, to view the color as the background-color along with different text colors)</p><br>
 			</div><br>
-			<label style="font-size: 18px;"><span style="font-weight: bold;">Scooby:</span> </label>
-			<label> Its a dummy comment.</label><br><br>
-		<input type="text" name="comment" style="width: 400px;">
-		<input type="submit" name="submit" value="Comment">
+			<input type="submit" name="Aprrove" value="Approve">
 		</div>
 	</form>
 
-	<form style="padding: 15px;" action="Registration.php">
+	<form style="padding: 15px;">
 		<div style="background-color:  #e6f0ff; text-align: left; border-radius: 2px; width: 500px; padding: 6px; left: 30%; position: relative;">
 			<label style="font-size: 25px;"><span style="font-weight: bold;">Mr. Brad</span></label><br>
 			<label style="font-size: 10px;">Date: 19.11.2020</label>
@@ -67,14 +69,9 @@ We believe in that using a simple text editor is a good way to learn HTML.
 
 Follow the steps below to create your first web page with Notepad or TextEdit.</p><br>
 			</div><br>
-			<label style="font-size: 18px;"><span style="font-weight: bold;">Scooby:</span> </label>
-			<label> Its a dummy comment.</label><br><br>
-		<input type="text" name="comment" style="width: 400px;">
-		<input type="submit" name="submit" value="Comment">
+			<input type="submit" name="Aprrove" value="Approve">
 		</div>
 	</form>
-
-	
 
 	<?php
 	include 'Footer.php';
