@@ -4,8 +4,12 @@ require_once '../model.php';
 
 if (isset($_POST['createStudent'])) {
     $data['name'] = $_POST['name'];
-    $data['surname'] = $_POST['surname'];
-    $data['username'] = $_POST['username'];
+    $data['username'] = $_POST['uname'];
+    $data['email'] = $_POST['email'];
+    $data['phone'] = $_POST['phone'];
+    $data['address'] = $_POST['address'];
+    $data['city'] = $_POST['city'];
+    $data['country'] = $_POST['country'];
     $data['password'] = password_hash($_POST['password'], PASSWORD_BCRYPT, ["cost" => 12]);
     $data['image'] = basename($_FILES["image"]["name"]);
 

@@ -48,7 +48,7 @@ session_start();
                 <table>
                     <tr>
                         <td>
-                            <label for=" name">Username:</label><br>
+                            <label for="uname">Username:</label><br>
                             <input type="text" id="uname" name="uname"><br>
                             <label for="name">Name:</label><br>
                             <input type="text" id="name" name="name"><br>
@@ -72,7 +72,7 @@ session_start();
                             <input type="date" id="birthday" name="birthday"><br>
                             <label for="password">Password:</label><br>
                             <input type="password" id="password" name="password"><br><br>
-                            <input type="submit" name="createUser" value="Create">
+                            <input type="submit" name="createEditor" value="Create">
                             <input type="reset">
                         </td>
                         <td>
