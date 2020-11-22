@@ -8,31 +8,6 @@ session_start();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="adminDashboard.css">
-    <style>
-        input,
-        select {
-            width: 250px;
-            border-color: rgba(3, 133, 255, 0.767);
-            padding: 5px;
-            border-radius: 8px;
-        }
-
-        input[type=submit],
-        input[type=reset] {
-            background-color: rgb(92, 151, 222);
-            border: none;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 8px;
-            margin-top: 40px;
-        }
-    </style>
 </head>
 
 <body>

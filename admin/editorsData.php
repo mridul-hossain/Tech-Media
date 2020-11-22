@@ -8,35 +8,6 @@ session_start();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="adminDashboard.css">
-    <style>
-        #list {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        #list td,
-        #list th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        #list tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        #list tr:hover {
-            background-color: #ddd;
-        }
-
-        #list th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: dodgerblue;
-            color: white;
-        }
-    </style>
 </head>
 
 <body>
@@ -62,7 +33,6 @@ session_start();
                     <th>DOB</th>
                     <th>Image</th>
                 </tr>
-
                 <tr>
                     <td>1</td>
                     <td>nafis</td>
@@ -75,10 +45,8 @@ session_start();
                     <td>Bangladesh</td>
                     <td>12-03-99</td>
                     <td>null</td>
-
                     <td><a href="editEditor.php">Edit</a></td>
                     <td><a href="deleteEditor.php">Delete</a></td>
-
                 </tr>
                 <tr>
                     <td>1</td>
@@ -92,10 +60,8 @@ session_start();
                     <td>Bangladesh</td>
                     <td>12-03-99</td>
                     <td>null</td>
-
                     <td><a href="editEditor.php?name=<?php echo $Editor['Name'] ?>">Edit</a></td>
                     <td><a href="deleteEditor.php?name=<?php echo $Editor['Name'] ?>">Delete</a></td>
-
                 </tr>
                 <tr>
                     <td>1</td>
@@ -109,12 +75,9 @@ session_start();
                     <td>Bangladesh</td>
                     <td>12-03-99</td>
                     <td>null</td>
-
                     <td><a href="editEditor.php?name=<?php echo $Editor['Name'] ?>">Edit</a></td>
                     <td><a href="deleteEditor.php?name=<?php echo $Editor['Name'] ?>">Delete</a></td>
-
                 </tr>
-
             </table>
         </form>
     </div>
