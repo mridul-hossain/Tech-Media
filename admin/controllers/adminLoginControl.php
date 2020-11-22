@@ -4,6 +4,6 @@ if (isset($_POST['submit']) && $_POST['uname'] == $_POST['name'] && $_POST['pass
     header("location: ../admin/adminDashboard.php");
 } else {
 
-    header("Location: ../Login.php");
+    header("Location: ../adminLogin.php");
     echo "Wrong Username or, Password!";
 }
