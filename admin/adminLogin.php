@@ -14,7 +14,7 @@ session_start();
 <body>
 
     <div class="container form-input" id="login_form_admin">
-        <form method="post" action="../controllers/Admin_Login_Control.php">
+        <form method="post" action="/controllers/adminLoginControl.php">
             <?php
             $_SESSION['username'] = 'nafis';
             $_SESSION['password'] = '1234';

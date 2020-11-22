@@ -76,8 +76,8 @@ session_start();
                     <td>12-03-99</td>
                     <td>null</td>
 
-                    <td><a href="editEditor.php?name=<?php echo $Editor['Name'] ?>">Edit</a></td>
-                    <td><a href="deleteEditor.php?name=<?php echo $Editor['Name'] ?>">Delete</a></td>
+                    <td><a href="editEditor.php">Edit</a></td>
+                    <td><a href="deleteEditor.php">Delete</a></td>
 
                 </tr>
                 <tr>
