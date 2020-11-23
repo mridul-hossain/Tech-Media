@@ -17,7 +17,7 @@ session_start();
     ?>
 
     <div class="main">
-        <form action="controller/createUser.php" method="POST" enctype="multipart/form-data">
+        <form action="controllers/addEditorControl.php" method="POST" enctype="multipart/form-data">
             <fieldset style="border-color: dodgerblue; border-radius: 8px;border-style: inset;">
                 <legend>Add Editor </legend>
                 <table>
