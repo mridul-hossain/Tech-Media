@@ -25,13 +25,13 @@ session_start();
                 <br><br>
                 <label class="med_font">Username</label>
                 <br>
-                <input type="text" name="name" placeholder="Enter Admin Username">
+                <input type="text" name="name" placeholder="Enter Admin Username" required>
                 <br>
                 <label class="sml_font text_error"> <?php echo $usernameErr; ?></label>
                 <br>
                 <label class="med_font">Password</label>
                 <br>
-                <input type="text" name="password" placeholder="Enter Admin Password">
+                <input type="text" name="password" placeholder="Enter Admin Password" required>
                 <br>
                 <label class="sml_font text_error"> <?php echo $passwordErr; ?></label>
                 <input type="hidden" name="uname" value="<?php echo $_SESSION['username'] ?>">

@@ -27,8 +27,7 @@ if (isset($_POST['createStudent'])) {
 
     /*if (addStudent($data)) {
         echo 'Successfully added!!';
-    }
-    */
+    }*/
 } else {
     echo 'You are not allowed to access this page.';
 }
