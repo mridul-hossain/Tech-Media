@@ -1,2 +1,2 @@
 SELECT *
-from admin
+from user
