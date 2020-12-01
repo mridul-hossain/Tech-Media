@@ -14,12 +14,17 @@ session_start();
      <?php
      include 'header_admin.html';
      include 'sidebar_admin.html';
-
      ?>
 
      <div class="main">
           <div class="welcome_text column" id="col-2">
                <h1 class="text_dark center_align">Welcome Admin <span style="color: dodgerblue;"><?php echo $_SESSION['username']; ?></span> </h1>
+          </div>
+          <div>
+               <h2>Total Users : <span style="color: dodgerblue;">125</span></h2>
+               <h2>Total Editors : <span style="color: dodgerblue;">5</span></h2>
+               <h2>Total Visitors this week : <span style="color: dodgerblue;">301</span></h2>
+               <h2>Total posts this week : <span style="color: dodgerblue;">22</span></h2>
           </div>
      </div>
      <?php
