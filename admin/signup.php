@@ -111,7 +111,6 @@ if (isset(($_POST['submit']))) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 
@@ -135,62 +134,43 @@ if (isset(($_POST['submit']))) {
                 </p>
             </div>
         </div>
-
         <div class="column" id="col-2">
-
             <div class="sign_up_form">
                 <form method="post" action="#">
-
                     <div class="form-input">
                         <h1 class="font_bold">Create an account</h2>
                             <h5 style="padding-left: 80px;">It's Quick and easy.</h5>
                     </div>
-
                     <div class="form-input">
                         <label>Enter Username</label>
                         <br>
                         <input type="text" name="username" placeholder="Username">
-
                         <label class="text_error"> <?php echo $usernameErr; ?> </label>
                     </div>
-
                     <div class="form-input">
                         <label>Name</label>
                         <br>
                         <input type="text" name="firstName" placeholder="Your Name">
                         <label class="text_error"><?php echo $firstNameErr; ?></label>
-
                     </div>
-
                     <div class="form-input">
                         <label>Enter Password</label>
                         <br>
                         <input type="password" name="password" placeholder="Password">
-
                         <label class="text_error"><?php echo $passwordErr; ?></label>
                     </div>
-
                     <div class="form-input">
                         <label>Re-type Password</label>
                         <br>
                         <input type="password" name="retypePassword" placeholder="Password">
-
                         <label class="text_error"><?php echo $passwordErr; ?></label>
                     </div>
-
                     <div class="form-input">
                         <label>Select Date Of Birth</label>
                         <br>
                         <input type="date" name="dateOfBirth" value="YYYY-MM-DD">
                         <label class="text_error"><?php echo $dateOfBirthErr; ?></label>
-
-
                     </div>
-
-
-
-
-
                     <div class="form-input">
                         <label>Select Gender</label>
                         <br>
@@ -198,29 +178,19 @@ if (isset(($_POST['submit']))) {
                         <label>Male</label>
                         <input type="radio" name="gender" value="female">
                         <label>Female</label>
-
                         <label class="text_error">
                             <?php echo $genderErr; ?>
                         </label>
                     </div>
-
                     <div class="btn btn_success" id="signUpBtn">
                         <input type="submit" value="Sign Up" name="submit">
                         <span>or</span>
                         <a href="login.php" class="text_error">Log In</a>
                     </div>
-
                 </form>
             </div>
         </div>
-
     </div>
-
 </body>
-<footer>
-    <?php
-    include '../footer.php';
-    ?>
-</footer>
 
 </html>
