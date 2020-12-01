@@ -2,7 +2,7 @@
 require_once '../model.php';
 
 
-if (isset($_POST['createStudent'])) {
+if (isset($_POST['createUser'])) {
     $data['name'] = $_POST['name'];
     $data['username'] = $_POST['uname'];
     $data['email'] = $_POST['email'];
@@ -25,7 +25,7 @@ if (isset($_POST['createStudent'])) {
         echo "Sorry, there was an error uploading your file.";
     }
 
-    /*if (addStudent($data)) {
+    /*if (addUser($data)) {
         echo 'Successfully added!!';
     }*/
 } else {

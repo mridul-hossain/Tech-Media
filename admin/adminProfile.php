@@ -1,5 +1,8 @@
 <?php
 session_start();
+require_once 'controllers/studentInfo.php';
+$profile = fetchProfile($_GET['id']);
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +19,18 @@ session_start();
     include 'sidebar_admin.html';
     ?>
 
-    
+    <table>
+        <tr>
+            <td>
+
+            </td>
+            <td></td>
+            <td>
+                <?php echo $profile['Surname'] ?>
+            </td>
+        </tr>
+    </table>
+
 
     <?php
     include '../footer.php';

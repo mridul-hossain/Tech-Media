@@ -1,12 +1,26 @@
 <?php
 
-require_once 'db_connect.php';
+require_once 'dbConnect.php';
 
-
-function showAllStudents()
+function showProfile($id)
 {
     $conn = db_conn();
-    $selectQuery = 'SELECT * FROM `user_info` ';
+    $selectQuery = "SELECT * FROM `admin` where username = ?";
+
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$id]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $row;
+}
+function showAllUsers()
+{
+    $conn = db_conn();
+    $selectQuery = 'SELECT * FROM `user` ';
     try {
         $stmt = $conn->query($selectQuery);
     } catch (PDOException $e) {
@@ -16,10 +30,10 @@ function showAllStudents()
     return $rows;
 }
 
-function showStudent($id)
+function showUser($id)
 {
     $conn = db_conn();
-    $selectQuery = "SELECT * FROM `user_info` where ID = ?";
+    $selectQuery = "SELECT * FROM `user` where ID = ?";
 
     try {
         $stmt = $conn->prepare($selectQuery);
@@ -33,10 +47,10 @@ function showStudent($id)
 }
 
 
-function addStudent($data)
+function addUser($data)
 {
     $conn = db_conn();
-    $selectQuery = "INSERT into user_info (Name, Surname, Username, Password, image)
+    $selectQuery = "INSERT into user (Name, Surname, Username, Password, image)
 VALUES (:name, :surname, :username, :password, :image)";
     try {
         $stmt = $conn->prepare($selectQuery);
@@ -56,10 +70,10 @@ VALUES (:name, :surname, :username, :password, :image)";
 }
 
 
-function updateStudent($id, $data)
+function updateUser($id, $data)
 {
     $conn = db_conn();
-    $selectQuery = "UPDATE user_info set Name = ?, Surname = ?, Username = ?, image = ? where ID = ?";
+    $selectQuery = "UPDATE user set Name = ?, Surname = ?, Username = ?, image = ? where ID = ?";
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([
@@ -73,10 +87,10 @@ function updateStudent($id, $data)
     return true;
 }
 
-function deleteStudent($id)
+function deleteUser($id)
 {
     $conn = db_conn();
-    $selectQuery = "DELETE FROM `user_info` WHERE `ID` = ?";
+    $selectQuery = "DELETE FROM `user` WHERE `ID` = ?";
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([$id]);
