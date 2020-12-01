@@ -1,8 +1,8 @@
 <?php
 
-require_once 'model.php';
+require_once '../model.php';
 
-function fetchProfile($id)
+function fetchProfile($username)
 {
-    return showProfile($id);
+    return showProfile($username);
 }

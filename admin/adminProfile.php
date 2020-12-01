@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once 'controllers/studentInfo.php';
-$profile = fetchProfile($_GET['id']);
+require_once 'controllers/adminProfileInfo.php';
 
+$profile = fetchProfile($_SESSION['username']);
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ $profile = fetchProfile($_GET['id']);
             </td>
             <td></td>
             <td>
-                <?php echo $profile['Surname'] ?>
+                <?php echo $profile['name'] ?>
             </td>
         </tr>
     </table>
