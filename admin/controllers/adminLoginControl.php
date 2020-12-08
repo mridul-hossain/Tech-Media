@@ -19,6 +19,7 @@ try {
             $count = $statement->rowCount();
             if ($count > 0) {
                 $_SESSION["username"] = $_POST["username"];
+                
                 header("location:../adminDashboard.php");
             } else {
                 echo '<label>Wrong Data</label>';
