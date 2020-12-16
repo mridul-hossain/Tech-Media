@@ -9,6 +9,7 @@ session_start();
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" type="text/css" href="css/adminDashboard.css">
      <link rel="stylesheet" type="text/css" href="css/header_admin.css">
+     <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
      <link rel="stylesheet" type="text/css" href="../HnF/Footer.css">
      <!--
      <link rel="stylesheet" type="text/css" href="../H&F/Header.css">

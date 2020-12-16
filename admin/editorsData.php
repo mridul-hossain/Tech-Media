@@ -8,6 +8,9 @@ session_start();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/adminDashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/header_admin.css">
+    <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
+    <link rel="stylesheet" type="text/css" href="../HnF/Footer.css">
 </head>
 
 <body>
@@ -82,7 +85,7 @@ session_start();
         </form>
     </div>
     <?php
-    include '../H&F/Footer.php';
+    include '../HnF/Footer.php';
     ?>
 </body>
 
