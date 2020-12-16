@@ -16,9 +16,11 @@ try {
         $count = $statement->rowCount();
         if ($count > 0) {
             $_SESSION["username"] = $_POST["username"];
-
+            $_SESSION["usertype"] = "admin";
             header("location:adminDashboard.php");
         } else {
+            $_SESSION["usertype"] = "";
+            $_SESSION["username"] = "";
             $err = "Wrong username or password";
         }
     }
@@ -34,9 +36,9 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/adminLogin.css">
     <link rel="stylesheet" type="text/css" href="css/basicStyling.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/adminLogin.js"></script>
 </head>
 

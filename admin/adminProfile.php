@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
+    header("location:adminLogin.php");
+}
 //require_once 'controllers/adminProfileInfo.php';
 
 //$profile = fetchProfile($_SESSION['username']);
