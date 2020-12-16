@@ -82,7 +82,7 @@ session_start();
         </form>
     </div>
     <?php
-    include '../footer.php';
+    include '../H&F/Footer.php';
     ?>
 </body>
 

@@ -77,7 +77,7 @@ session_start();
     </div>
 
     <?php
-    include '../footer.php';
+    include '../H&F/Footer.php';
     ?>
 
 </body>
