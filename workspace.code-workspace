@@ -19,6 +19,9 @@
 				"database": "project_db",
 				"username": "root"
 			}
+		],
+		"cSpell.words": [
+			"endforeach"
 		]
 	}
 }

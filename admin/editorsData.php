@@ -3,30 +3,10 @@ session_start();
 if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
-include("../dbConnect.php");
-$err = "";
-try {
-    $connect = db_conn();
-    if (isset($_POST["submit"])) {
-        $sql = "SELECT * FROM editor";
-        $result = $conn->query($sql);
+require_once 'controllers/editorInfo.php';
 
-        if ($result->num_rows > 0) {
-            echo "<table><tr><th>ID</th><th>Name</th></tr>";
-            // output data of each row
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["firstname"] . " " . $row["lastname"] . "</td></tr>";
-            }
-            echo "</table>";
-        } else {
-            echo "0 results";
-        }
+$editors = fetchAllEditors();
 
-        $connect->close();
-    }
-} catch (PDOException $error) {
-    echo $error->getMessage();
-}
 ?>
 
 <!DOCTYPE html>
@@ -47,9 +27,30 @@ try {
     ?>
 
     <div class="main">
-        <form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($editors as $i => $editor) : ?>
+                    <tr>
+                        <td><a href="showEditor.php?id=<?php echo $editor['ID'] ?>"><?php echo $editor['Name'] ?></a></td>
+                        <td><?php echo $editor['Username'] ?></td>
+                        <td><?php echo $editor['Password'] ?></td>
+                        <td><img width="100px" src="uploads/<?php echo $editor['image'] ?>" alt="<?php echo $editor['Name'] ?>"></td>
+                        <td><a href="editStudent.php?id=<?php echo $editor['ID'] ?>">Edit</a>&nbsp<a href="controller/deleteStudent.php?id=<?php echo $editor['ID'] ?>">Delete</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
 
-        </form>
+
+        </table>
     </div>
     <?php
     include '../HnF/Footer.php';

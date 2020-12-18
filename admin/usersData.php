@@ -51,10 +51,32 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
      include 'sidebar_admin.html';
      ?>
 
-     <div class="main">
-          <form>
 
-          </form>
+     <div class="main">
+          <table>
+               <thead>
+                    <tr>
+                         <th>Name</th>
+                         <th>Username</th>
+                         <th>Password</th>
+                         <th>Image</th>
+                         <th>Action</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <?php foreach ($editors as $i => $editor) : ?>
+                         <tr>
+                              <td><a href="showEditor.php?id=<?php echo $editor['ID'] ?>"><?php echo $editor['Name'] ?></a></td>
+                              <td><?php echo $editor['Username'] ?></td>
+                              <td><?php echo $editor['Password'] ?></td>
+                              <td><img width="100px" src="uploads/<?php echo $editor['image'] ?>" alt="<?php echo $editor['Name'] ?>"></td>
+                              <td><a href="editStudent.php?id=<?php echo $editor['ID'] ?>">Edit</a>&nbsp<a href="controller/deleteStudent.php?id=<?php echo $editor['ID'] ?>">Delete</a></td>
+                         </tr>
+                    <?php endforeach; ?>
+               </tbody>
+
+
+          </table>
      </div>
      <?php
      include '../HnF/Footer.php';
