@@ -41,7 +41,7 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
           </div>
      </div>
      <?php
-     include '../HnF/Footer.php';
+     include '../../HnF/Footer.php';
      ?>
 </body>
 

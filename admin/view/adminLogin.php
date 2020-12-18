@@ -1,9 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['username'] != "") {
-    header("location:adminLogin.php");
-}
-include("../dbConnect.php");
+include("../../dbConnect.php");
 $err = "";
 try {
     $connect = db_conn();
