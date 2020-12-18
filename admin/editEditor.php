@@ -62,7 +62,6 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
                         </td>
                     </tr>
                 </table>
-
             </fieldset>
             <br>
         </form>

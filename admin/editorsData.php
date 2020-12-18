@@ -3,6 +3,30 @@ session_start();
 if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
+include("../dbConnect.php");
+$err = "";
+try {
+    $connect = db_conn();
+    if (isset($_POST["submit"])) {
+        $sql = "SELECT * FROM editor";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            echo "<table><tr><th>ID</th><th>Name</th></tr>";
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["firstname"] . " " . $row["lastname"] . "</td></tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "0 results";
+        }
+
+        $connect->close();
+    }
+} catch (PDOException $error) {
+    echo $error->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,68 +47,8 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     ?>
 
     <div class="main">
-        <br>
         <form>
-            <table id="list">
-                <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Name</th>
-                    <th>Password</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>City</th>
-                    <th>Counry</th>
-                    <th>DOB</th>
-                    <th>Image</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>nafis</td>
-                    <td>nafisur Rahman</td>
-                    <td>1234</td>
-                    <td>nfa@gmail.com</td>
-                    <td>012345678902</td>
-                    <td>khilgaon</td>
-                    <td>Dhaka</td>
-                    <td>Bangladesh</td>
-                    <td>12-03-99</td>
-                    <td>null</td>
-                    <td><a href="editEditor.php">Edit</a></td>
-                    <td><a href="deleteEditor.php">Delete</a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>nafis</td>
-                    <td>nafisur Rahman</td>
-                    <td>1234</td>
-                    <td>nfa@gmail.com</td>
-                    <td>012345678902</td>
-                    <td>khilgaon</td>
-                    <td>Dhaka</td>
-                    <td>Bangladesh</td>
-                    <td>12-03-99</td>
-                    <td>null</td>
-                    <td><a href="editEditor.php?name=<?php echo $Editor['Name'] ?>">Edit</a></td>
-                    <td><a href="deleteEditor.php?name=<?php echo $Editor['Name'] ?>">Delete</a></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>nafis</td>
-                    <td>nafisur Rahman</td>
-                    <td>1234</td>
-                    <td>nfa@gmail.com</td>
-                    <td>012345678902</td>
-                    <td>khilgaon</td>
-                    <td>Dhaka</td>
-                    <td>Bangladesh</td>
-                    <td>12-03-99</td>
-                    <td>null</td>
-                    <td><a href="editEditor.php?name=<?php echo $Editor['Name'] ?>">Edit</a></td>
-                    <td><a href="deleteEditor.php?name=<?php echo $Editor['Name'] ?>">Delete</a></td>
-                </tr>
-            </table>
+
         </form>
     </div>
     <?php

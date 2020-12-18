@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_SESSION['username'] != "") {
+    header("location:adminLogin.php");
+}
 include("../dbConnect.php");
 $err = "";
 try {
@@ -53,7 +56,7 @@ try {
                 <input class="form-control pwd" type="text" name="username" id="username" placeholder="Enter Admin Username"><br>
                 <label class="med_font">Password</label><br>
                 <input class="form-control pwd" type="password" id="password" name="password" placeholder="Enter Admin Password">
-                <button type="button" id="show_password" name="show_password" class="btn btn-primary">Show</button>
+                <button type="button" id="show_password" name="show_password" style="background: dodgerblue;">Show</button>
                 <br>
                 <label class="sml_font text_error"> <?php echo $err; ?></label>
                 <div class="login_btn">

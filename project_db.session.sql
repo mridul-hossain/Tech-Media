@@ -1,2 +1,1 @@
-SELECT *
-FROM admin
+SELECT * FROM editor
