@@ -53,14 +53,13 @@ try {
                 <input class="form-control pwd" type="text" name="username" id="username" placeholder="Enter Admin Username"><br>
                 <label class="med_font">Password</label><br>
                 <input class="form-control pwd" type="password" id="password" name="password" placeholder="Enter Admin Password">
-                <button type="button" id="show_password" name="show_password" class="btn btn-default">Show</button>
+                <button type="button" id="show_password" name="show_password" class="btn btn-primary">Show</button>
                 <br>
                 <label class="sml_font text_error"> <?php echo $err; ?></label>
                 <div class="login_btn">
                     <input type="submit" name="submit" value="Login" onclick="validate()">
                 </div>
-                </>
-
+            </div>
         </form>
     </div>
 </body>

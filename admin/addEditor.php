@@ -4,7 +4,6 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -21,7 +20,6 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     include 'header_admin.html';
     include 'sidebar_admin.html';
     ?>
-
     <div class="main">
         <form action="controllers/addEditorControl.php" method="POST" enctype="multipart/form-data">
             <fieldset style="border-color: dodgerblue; border-radius: 8px;border-style: inset;">
@@ -62,7 +60,6 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
                         </td>
                     </tr>
                 </table>
-
             </fieldset>
             <br>
         </form>
