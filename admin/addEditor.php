@@ -21,7 +21,7 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     include 'sidebar_admin.html';
     ?>
     <div class="main">
-        <form action="controllers/addEditorControl.php" method="POST" enctype="multipart/form-data">
+        <form action="controllers/createEditor.php" method="POST" enctype="multipart/form-data">
             <fieldset style="border-color: dodgerblue; border-radius: 8px;border-style: inset;">
                 <legend>Add Editor </legend>
                 <table>

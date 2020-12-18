@@ -3,6 +3,10 @@ session_start();
 if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
      header("location:adminLogin.php");
 }
+require_once 'controllers/userInfo.php';
+
+$users = fetchAllUsers();
+
 ?>
 
 <!DOCTYPE html>
@@ -64,13 +68,13 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
                     </tr>
                </thead>
                <tbody>
-                    <?php foreach ($editors as $i => $editor) : ?>
+                    <?php foreach ($users as $i => $user) : ?>
                          <tr>
-                              <td><a href="showEditor.php?id=<?php echo $editor['ID'] ?>"><?php echo $editor['Name'] ?></a></td>
-                              <td><?php echo $editor['Username'] ?></td>
-                              <td><?php echo $editor['Password'] ?></td>
-                              <td><img width="100px" src="uploads/<?php echo $editor['image'] ?>" alt="<?php echo $editor['Name'] ?>"></td>
-                              <td><a href="editStudent.php?id=<?php echo $editor['ID'] ?>">Edit</a>&nbsp<a href="controller/deleteStudent.php?id=<?php echo $editor['ID'] ?>">Delete</a></td>
+                              <td><a href="showEditor.php?id=<?php echo $user['ID'] ?>"><?php echo $user['Name'] ?></a></td>
+                              <td><?php echo $user['Username'] ?></td>
+                              <td><?php echo $user['Password'] ?></td>
+                              <td><img width="100px" src="uploads/<?php echo $user['image'] ?>" alt="<?php echo $user['Name'] ?>"></td>
+                              <td><a href="editStudent.php?id=<?php echo $user['ID'] ?>">Edit</a>&nbsp<a href="controller/deleteStudent.php?id=<?php echo $user['ID'] ?>">Delete</a></td>
                          </tr>
                     <?php endforeach; ?>
                </tbody>
