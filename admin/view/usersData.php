@@ -3,7 +3,7 @@ session_start();
 if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
      header("location:adminLogin.php");
 }
-require_once 'controllers/userInfo.php';
+require_once 'controllers/showUserInfo.php';
 
 $users = fetchAllUsers();
 
@@ -55,33 +55,43 @@ $users = fetchAllUsers();
      include 'sidebar_admin.html';
      ?>
 
-
-     <div class="main">
-          <table>
-               <thead>
-                    <tr>
-                         <th>Name</th>
-                         <th>Username</th>
-                         <th>Password</th>
-                         <th>Image</th>
-                         <th>Action</th>
-                    </tr>
-               </thead>
-               <tbody>
-                    <?php foreach ($users as $i => $user) : ?>
+     <form>
+          <div class="main">
+               <table>
+                    <thead>
                          <tr>
-                              <td><a href="showEditor.php?id=<?php echo $user['ID'] ?>"><?php echo $user['Name'] ?></a></td>
-                              <td><?php echo $user['Username'] ?></td>
-                              <td><?php echo $user['Password'] ?></td>
-                              <td><img width="100px" src="uploads/<?php echo $user['image'] ?>" alt="<?php echo $user['Name'] ?>"></td>
-                              <td><a href="editStudent.php?id=<?php echo $user['ID'] ?>">Edit</a>&nbsp<a href="controller/deleteStudent.php?id=<?php echo $user['ID'] ?>">Delete</a></td>
+                              <th>ID</th>
+                              <th>Name</th>
+                              <th>Username</th>
+                              <th>Password</th>
+                              <th>Phone</th>
+                              <th>Email</th>
+                              <th>Address</th>
+                              <th>City</th>
+                              <th>Country</th>
                          </tr>
-                    <?php endforeach; ?>
-               </tbody>
+                    </thead>
+                    <tbody>
+                         <?php foreach ($users as $i => $user) : ?>
+                              <tr>
+                                   <td><?php echo $user["id"] ?></td>
+                                   <td><?php echo $user["name"] ?></td>
+                                   <td><?php echo $user["username"] ?></td>
+                                   <td><?php echo $user["password"] ?></td>
+                                   <td><?php echo $user["phone"] ?></td>
+                                   <td><?php echo $user["email"] ?></td>
+                                   <td><?php echo $user["address"] ?></td>
+                                   <td><?php echo $user["city"] ?></td>
+                                   <td><?php echo $user["country"] ?></td>
+                              </tr>
+                         <?php endforeach; ?>
+                    </tbody>
 
 
-          </table>
-     </div>
+               </table>
+          </div>
+     </form>
+
      <?php
      include '../HnF/Footer.php';
      ?>

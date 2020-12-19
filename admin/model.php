@@ -18,7 +18,7 @@ function showProfile($username)
 function showAllEditors()
 {
     $conn = db_conn();
-    $selectQuery = 'SELECT * FROM `user` ';
+    $selectQuery = 'SELECT * FROM `editor` ';
     try {
         $stmt = $conn->query($selectQuery);
     } catch (PDOException $e) {
@@ -31,7 +31,7 @@ function showAllEditors()
 function showEditor($id)
 {
     $conn = db_conn();
-    $selectQuery = "SELECT * FROM `user` where ID = ?";
+    $selectQuery = "SELECT * FROM `editor` where ID = ?";
 
     try {
         $stmt = $conn->prepare($selectQuery);
@@ -46,7 +46,7 @@ function showEditor($id)
 function showAllUsers()
 {
     $conn = db_conn();
-    $selectQuery = 'SELECT * FROM `user` ';
+    $selectQuery = 'SELECT * FROM editor ';
     try {
         $stmt = $conn->query($selectQuery);
     } catch (PDOException $e) {
