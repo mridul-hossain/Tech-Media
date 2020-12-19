@@ -46,7 +46,7 @@ function showEditor($id)
 function showAllUsers()
 {
     $conn = db_conn();
-    $selectQuery = 'SELECT * FROM editor ';
+    $selectQuery = 'SELECT * FROM `user` ';
     try {
         $stmt = $conn->query($selectQuery);
     } catch (PDOException $e) {

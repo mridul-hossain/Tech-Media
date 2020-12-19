@@ -1,9 +1,9 @@
 <?php
 session_start();
-if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
+if ($_SESSION['username'] == "") {
      header("location:adminLogin.php");
 }
-require_once 'controllers/showUserInfo.php';
+require_once '../controllers/showUserInfo.php';
 
 $users = fetchAllUsers();
 
