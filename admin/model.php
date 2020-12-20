@@ -1,7 +1,22 @@
 <?php
+session_start();
+include("../../dbConnect.php");
 
-require_once 'dbConnect.php';
+function search($input)
+{
+    $str = $input;
+    $conn = db_conn();
+    $selectQuery = "SELECT * FROM editor WHERE name LIKE '%{$str}%' ";
 
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+}
 function showProfile($username)
 {
     $conn = db_conn();
@@ -18,7 +33,7 @@ function showProfile($username)
 function showAllEditors()
 {
     $conn = db_conn();
-    $selectQuery = 'SELECT * FROM `editor` ';
+    $selectQuery = 'SELECT * FROM editor ';
     try {
         $stmt = $conn->query($selectQuery);
     } catch (PDOException $e) {
@@ -46,7 +61,7 @@ function showEditor($id)
 function showAllUsers()
 {
     $conn = db_conn();
-    $selectQuery = 'SELECT * FROM `user` ';
+    $selectQuery = 'SELECT * FROM user ';
     try {
         $stmt = $conn->query($selectQuery);
     } catch (PDOException $e) {

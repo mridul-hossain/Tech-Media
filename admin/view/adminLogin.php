@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_SESSION["usertype"] == "admin") {
+    header("location:adminDashboard.php");
+}
 include("../../dbConnect.php");
 $err = "";
 try {

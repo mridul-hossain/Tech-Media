@@ -1,12 +1,12 @@
 <?php
 session_start();
-if ($_SESSION['username'] == "") {
+if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
      header("location:adminLogin.php");
 }
 require_once '../controllers/showUserInfo.php';
-
+//require_once '../model.php';
 $users = fetchAllUsers();
-
+//$users = showAllUsers();
 ?>
 
 <!DOCTYPE html>
@@ -51,13 +51,13 @@ $users = fetchAllUsers();
 
 <body>
      <?php
-     include 'header_admin.html';
+     include 'header_admin.php';
      include 'sidebar_admin.html';
      ?>
 
      <form>
           <div class="main">
-               <table>
+               <table id="list">
                     <thead>
                          <tr>
                               <th>ID</th>
@@ -77,7 +77,7 @@ $users = fetchAllUsers();
                                    <td><?php echo $user["id"] ?></td>
                                    <td><?php echo $user["name"] ?></td>
                                    <td><?php echo $user["username"] ?></td>
-                                   <td><?php echo $user["password"] ?></td>
+                                   <td><?php echo $user["pass"] ?></td>
                                    <td><?php echo $user["phone"] ?></td>
                                    <td><?php echo $user["email"] ?></td>
                                    <td><?php echo $user["address"] ?></td>

@@ -23,7 +23,7 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
 <body>
      <?php
 
-     include 'header_admin.html';
+     include 'header_admin.php';
      //include '../HnF/Header.php';
      include 'sidebar_admin.html';
 

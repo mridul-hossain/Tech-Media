@@ -3,10 +3,10 @@ session_start();
 if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
-require_once 'controllers/editorInfo.php';
-
-$editors = fetchAllEditors();
-
+require_once '../controllers/showUserInfo.php';
+//require_once '../model.php';
+$editors = fetchAllUsers();
+//$editors = showAllEditors();
 ?>
 
 <!DOCTYPE html>
@@ -18,40 +18,80 @@ $editors = fetchAllEditors();
     <link rel="stylesheet" type="text/css" href="css/header_admin.css">
     <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
     <link rel="stylesheet" type="text/css" href="../HnF/Footer.css">
+    <style>
+        #list {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #list td,
+        #list th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #list tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #list tr:hover {
+            background-color: #ddd;
+        }
+
+        #list th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: dodgerblue;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
     <?php
-    include 'header_admin.html';
+    include 'header_admin.php';
     include 'sidebar_admin.html';
     ?>
 
-    <div class="main">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Image</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($editors as $i => $editor) : ?>
+    <form>
+        <div class="main">
+            <table id="list">
+                <thead>
                     <tr>
-                        <td><a href="showEditor.php?id=<?php echo $editor['ID'] ?>"><?php echo $editor['Name'] ?></a></td>
-                        <td><?php echo $editor['Username'] ?></td>
-                        <td><?php echo $editor['Password'] ?></td>
-                        <td><img width="100px" src="uploads/<?php echo $editor['image'] ?>" alt="<?php echo $editor['Name'] ?>"></td>
-                        <td><a href="editStudent.php?id=<?php echo $editor['ID'] ?>">Edit</a>&nbsp<a href="controller/deleteStudent.php?id=<?php echo $editor['ID'] ?>">Delete</a></td>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Country</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
+                </thead>
+                <tbody>
+                    <?php foreach ($editors as $i => $editor) : ?>
+                        <tr>
+                            <td><?php echo $editor["id"] ?></td>
+                            <td><?php echo $editor["name"] ?></td>
+                            <td><?php echo $editor["username"] ?></td>
+                            <td><?php echo $editor["pass"] ?></td>
+                            <td><?php echo $editor["phone"] ?></td>
+                            <td><?php echo $editor["email"] ?></td>
+                            <td><?php echo $editor["address"] ?></td>
+                            <td><?php echo $editor["city"] ?></td>
+                            <td><?php echo $editor["country"] ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
 
 
-        </table>
-    </div>
+            </table>
+        </div>
+    </form>
+
     <?php
     include '../HnF/Footer.php';
     ?>

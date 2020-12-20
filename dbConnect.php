@@ -13,6 +13,7 @@ function db_conn()
         // var_dump($conn) ;
     } catch (PDOException $e) {
         echo $e->getMessage();
+        echo "bye bye";
     }
     return $conn;
 }
