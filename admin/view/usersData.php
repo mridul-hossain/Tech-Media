@@ -88,7 +88,6 @@ $users = fetchAllUsers();
                </table>
           </div>
      </form>
-
      <?php
      include '../HnF/Footer.php';
      ?>

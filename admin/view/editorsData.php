@@ -3,10 +3,8 @@ session_start();
 if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
-require_once '../controllers/showUserInfo.php';
-//require_once '../model.php';
-$editors = fetchAllUsers();
-//$editors = showAllEditors();
+require_once '../controllers/showEditorInfo.php';
+$editors = fetchAllEditors();
 ?>
 
 <!DOCTYPE html>
@@ -18,35 +16,32 @@ $editors = fetchAllUsers();
     <link rel="stylesheet" type="text/css" href="css/header_admin.css">
     <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
     <link rel="stylesheet" type="text/css" href="../HnF/Footer.css">
-    <style>
-        #list {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.search-box input[type="text"]').on("keyup input", function() {
+                /* Get input value on change */
+                var inputVal = $(this).val();
+                var resultDropdown = $(this).siblings(".result");
+                if (inputVal.length) {
+                    $.get("searchEditor.php", {
+                        term: inputVal
+                    }).done(function(data) {
+                        // Display the returned data in browser
+                        resultDropdown.html(data);
+                    });
+                } else {
+                    resultDropdown.empty();
+                }
+            });
 
-        #list td,
-        #list th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        #list tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        #list tr:hover {
-            background-color: #ddd;
-        }
-
-        #list th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: dodgerblue;
-            color: white;
-        }
-    </style>
+            // Set search input value on click of result item
+            $(document).on("click", ".result p", function() {
+                $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+                $(this).parent(".result").empty();
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -57,6 +52,10 @@ $editors = fetchAllUsers();
 
     <form>
         <div class="main">
+            <div class="search-box">
+                <input type="text" autocomplete="off" placeholder="Search editor..." />
+                <div class="result"></div>
+            </div><br>
             <table id="list">
                 <thead>
                     <tr>
@@ -86,12 +85,9 @@ $editors = fetchAllUsers();
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
-
-
             </table>
         </div>
     </form>
-
     <?php
     include '../HnF/Footer.php';
     ?>
