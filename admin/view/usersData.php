@@ -26,15 +26,12 @@ $users = fetchAllUsers();
      include 'header_admin.php';
      include 'sidebar_admin.html';
      ?>
-
      <form>
           <div class="main">
                <div class="search-box">
                     <input type="text" autocomplete="off" placeholder="Search user..." onkeyup="search(this.value)" />
-
                </div>
                <div id=table>
-
                     <table id=list>
                          <thead>
                               <tr>
