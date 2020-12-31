@@ -17,10 +17,22 @@ function search($input)
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 }
-function showAllNotifications()
+function showPendingPosts()
 {
     $conn = db_conn();
     $selectQuery = 'SELECT * FROM post WHERE approved = 0 ';
+    try {
+        $stmt = $conn->query($selectQuery);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+}
+function showApprovedPosts()
+{
+    $conn = db_conn();
+    $selectQuery = 'SELECT * FROM post WHERE approved = 1 ';
     try {
         $stmt = $conn->query($selectQuery);
     } catch (PDOException $e) {
