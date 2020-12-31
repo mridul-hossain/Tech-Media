@@ -6,11 +6,11 @@ try {
     die("ERROR: Could not connect. " . $e->getMessage());
 }
 try {
-    if (isset($_REQUEST["term"])) {
-        $sql = "SELECT * FROM user WHERE name LIKE :term";
+    if (isset($_REQUEST["str"])) {
+        $sql = "SELECT * FROM user WHERE name LIKE :str";
         $stmt = $pdo->prepare($sql);
-        $term = $_REQUEST["term"] . '%';
-        $stmt->bindParam(":term", $term);
+        $str = $_REQUEST["str"] . '%';
+        $stmt->bindParam(":str", $str);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
 ?>
@@ -32,7 +32,6 @@ try {
                     <tbody>
                         <?php
                         while ($row = $stmt->fetch()) {
-                            //echo "<p>" . $row["name"] . "</p>";
                         ?>
                             <tr>
                                 <td><?php echo $row["id"] ?></td>

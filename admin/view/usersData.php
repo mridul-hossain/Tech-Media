@@ -31,39 +31,39 @@ $users = fetchAllUsers();
                <div class="search-box">
                     <input type="text" autocomplete="off" placeholder="Search user..." onkeyup="search(this.value)" />
                </div>
-               <div id=table>
-                    <table id=list>
-                         <thead>
+               <div id=table></div>
+               <table id=list>
+                    <thead>
+                         <tr>
+                              <th>ID</th>
+                              <th>Name</th>
+                              <th>Username</th>
+                              <th>Password</th>
+                              <th>Phone</th>
+                              <th>Email</th>
+                              <th>Address</th>
+                              <th>City</th>
+                              <th>Country</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                         <?php foreach ($users as $i => $user) : ?>
                               <tr>
-                                   <th>ID</th>
-                                   <th>Name</th>
-                                   <th>Username</th>
-                                   <th>Password</th>
-                                   <th>Phone</th>
-                                   <th>Email</th>
-                                   <th>Address</th>
-                                   <th>City</th>
-                                   <th>Country</th>
+                                   <td><?php echo $user["id"] ?></td>
+                                   <td><?php echo $user["name"] ?></td>
+                                   <td><?php echo $user["username"] ?></td>
+                                   <td><?php echo $user["pass"] ?></td>
+                                   <td><?php echo $user["phone"] ?></td>
+                                   <td><?php echo $user["email"] ?></td>
+                                   <td><?php echo $user["address"] ?></td>
+                                   <td><?php echo $user["city"] ?></td>
+                                   <td><?php echo $user["country"] ?></td>
                               </tr>
-                         </thead>
-                         <tbody>
-                              <?php foreach ($users as $i => $user) : ?>
-                                   <tr>
-                                        <td><?php echo $user["id"] ?></td>
-                                        <td><?php echo $user["name"] ?></td>
-                                        <td><?php echo $user["username"] ?></td>
-                                        <td><?php echo $user["pass"] ?></td>
-                                        <td><?php echo $user["phone"] ?></td>
-                                        <td><?php echo $user["email"] ?></td>
-                                        <td><?php echo $user["address"] ?></td>
-                                        <td><?php echo $user["city"] ?></td>
-                                        <td><?php echo $user["country"] ?></td>
-                                   </tr>
-                              <?php endforeach; ?>
-                         </tbody>
-                    </table>
-               </div>
+                         <?php endforeach; ?>
+                    </tbody>
+               </table>
           </div>
+
      </form>
      <?php
      include '../HnF/Footer.php';

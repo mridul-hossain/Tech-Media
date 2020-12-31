@@ -31,7 +31,6 @@ try {
                 <tbody>
                     <?php
                     while ($row = $stmt->fetch()) {
-                        //echo "<p>" . $row["name"] . "</p>";
                     ?>
                         <tr>
                             <td><?php echo $row["id"] ?></td>
