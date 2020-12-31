@@ -17,4 +17,3 @@ function db_conn()
     }
     return $conn;
 }
-?>

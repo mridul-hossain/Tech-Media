@@ -1,68 +1,68 @@
-*{
-	margin: 0;
-	padding: 0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-body{
-	background-color: #004528;
+body {
+    background-color: #004528;
 }
 
-.contentProfile{
-	display: flex;
+.contentProfile {
+    display: flex;
 }
 
-.fieldsetProfile{
-	background-color: white;
-	border-radius: 4px;
-	height: 400px;
-	box-shadow: 0 0 5px;
-	border-style: none;
-	outline: none;
+.fieldsetProfile {
+    background-color: white;
+    border-radius: 4px;
+    height: 400px;
+    box-shadow: 0 0 5px;
+    border-style: none;
+    outline: none;
 }
 
-.divFieldset{
-	padding-left: 20px;
-	padding-top: 20px;
+.divFieldset {
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
-.contentPending{
-	display: flex;
+.contentPending {
+    display: flex;
 }
 
-.post{
-	padding-top: 20px;
+.post {
+    padding-top: 20px;
 }
 
-.errMessage{
-	color: red;
-	overflow: hidden;
-	display: block;
-
-opacity: 0;
+.errMessage {
+    color: red;
+    overflow: hidden;
+    display: block;
+    opacity: 0;
 }
 
-.userBody{
-	display: flex;
+.userBody {
+    display: flex;
 }
 
-.userTable{
-	margin-left: 20px;
-	margin-top: 20px;
-	background-color: red;
-	border-radius: 4px;
-	box-shadow: 0 0 5px;
-	padding: 100px;
-}
-.tableDesign{
-	padding: 4px;
+.userTable {
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: red;
+    border-radius: 4px;
+    box-shadow: 0 0 5px;
+    padding: 100px;
 }
 
-.searchUserTable{
-	display: none;
-	margin-left: 20px;
-	margin-top: 20px;
-	background-color: white;
-	border-radius: 4px;
-	box-shadow: 0 0 5px;
-	padding: 100px;
+.tableDesign {
+    padding: 4px;
+}
+
+.searchUserTable {
+    display: none;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 5px;
+    padding: 100px;
 }

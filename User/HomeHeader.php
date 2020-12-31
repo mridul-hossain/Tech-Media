@@ -16,4 +16,5 @@
 	<a href="profilrControl.php" style="position: relative; top: -90px;">Logout</a>
 	<div style="width: 100%; border-top: 2px solid gray;position: relative; top: -85px;"></div>
 </body>
+
 </html>
