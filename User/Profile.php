@@ -9,7 +9,7 @@
   <input type="submit">
   <br>
   <br>
-	<form action="Editcontrol.php">
+	<form action="Profilecontrol.php">
 	
 
 <img src="../Media/1024px-Circle-icons-profile.svg.png" alt="Flowers in Chania" width="260" height="145"></img>
@@ -44,7 +44,7 @@
 </form>	 
 </fieldset>
 <?php
-include 'Abid.php';
+include 'Top.php';
 ?>
 
 </body>
