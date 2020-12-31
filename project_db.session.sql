@@ -1,1 +1,1 @@
-SELECT * FROM editor
+SELECT * FROM USER

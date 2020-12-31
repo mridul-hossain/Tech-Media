@@ -53,41 +53,43 @@ $editors = fetchAllEditors();
     <form>
         <div class="main">
             <div class="search-box">
-                <input type="text" autocomplete="off" placeholder="Search editor..." />
-                <div class="result"></div>
-            </div><br>
-            <table id="list">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>City</th>
-                        <th>Country</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($editors as $i => $editor) : ?>
-                        <tr>
-                            <td><?php echo $editor["id"] ?></td>
-                            <td><?php echo $editor["name"] ?></td>
-                            <td><?php echo $editor["username"] ?></td>
-                            <td><?php echo $editor["pass"] ?></td>
-                            <td><?php echo $editor["phone"] ?></td>
-                            <td><?php echo $editor["email"] ?></td>
-                            <td><?php echo $editor["address"] ?></td>
-                            <td><?php echo $editor["city"] ?></td>
-                            <td><?php echo $editor["country"] ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
+                <input type="text" autocomplete="off" placeholder="Search user..." />
+                <div class="result">
+
+                    <table id="list">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($editors as $i => $editor) : ?>
+                                <tr>
+                                    <td><?php echo $editor["id"] ?></td>
+                                    <td><?php echo $editor["name"] ?></td>
+                                    <td><?php echo $editor["username"] ?></td>
+                                    <td><?php echo $editor["pass"] ?></td>
+                                    <td><?php echo $editor["phone"] ?></td>
+                                    <td><?php echo $editor["email"] ?></td>
+                                    <td><?php echo $editor["address"] ?></td>
+                                    <td><?php echo $editor["city"] ?></td>
+                                    <td><?php echo $editor["country"] ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
     </form>
+
     <?php
     include '../HnF/Footer.php';
     ?>

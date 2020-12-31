@@ -17,6 +17,18 @@ function search($input)
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 }
+function showAllNotifications()
+{
+    $conn = db_conn();
+    $selectQuery = 'SELECT * FROM post WHERE approved = 0 ';
+    try {
+        $stmt = $conn->query($selectQuery);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+}
 function showProfile($username)
 {
     $conn = db_conn();

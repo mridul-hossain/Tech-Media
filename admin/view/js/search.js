@@ -10,6 +10,6 @@ function search(str) {
             document.getElementById("table").innerHTML = this.responseText;
         }
     };
-    xhttp.open("GET", "searchUser.php?q=" + str, true);
+    xhttp.open("GET", "../searchUser.php?q=" + str, true);
     xhttp.send();
 }

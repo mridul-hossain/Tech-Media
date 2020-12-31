@@ -4,7 +4,7 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
 require_once '../controllers/showNotification.php';
-$users = fetchAllUsers();
+$notifications = fetchAllNotifications();
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +24,20 @@ $users = fetchAllUsers();
     include 'header_admin.php';
     include 'sidebar_admin.html';
     ?>
+    <div class="main">
+        <?php foreach ($notifications as $i => $notification) : ?>
+            <fieldset>
+                <div>
+                    <div style="font-size: large;"><?php echo $notification["title"] ?></div>
+                    <div style="font-style: italic;"><?php echo $notification["time"] ?></div>
+                    <div><?php echo $notification["image"] ?></div>
+                    <br>
+                    <div style="font-family:Georgia, 'Times New Roman', Times, serif;"><?php echo $notification["text"] ?></div>
+                </div>
+            </fieldset>
+
+        <?php endforeach; ?>
+    </div>
 
     <?php
     include '../HnF/Footer.php';

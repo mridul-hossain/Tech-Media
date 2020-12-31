@@ -6,48 +6,47 @@ try {
     die("ERROR: Could not connect. " . $e->getMessage());
 }
 try {
-    if (isset($_REQUEST["str"])) {
-        $sql = "SELECT * FROM user WHERE name LIKE :str";
+    if (isset($_REQUEST["term"])) {
+        $sql = "SELECT * FROM user WHERE name LIKE :term";
         $stmt = $pdo->prepare($sql);
-        $str = $_REQUEST["str"] . '%';
-        $stmt->bindParam(":str", $str);
+        $term = $_REQUEST["term"] . '%';
+        $stmt->bindParam(":term", $term);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
 ?>
-            <div id=table>
-                <table id="list">
-                    <thead>
+            <table id="list">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    while ($row = $stmt->fetch()) {
+                        //echo "<p>" . $row["name"] . "</p>";
+                    ?>
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Username</th>
-                            <th>Password</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>City</th>
-                            <th>Country</th>
+                            <td><?php echo $row["id"] ?></td>
+                            <td><?php echo $row["name"] ?></td>
+                            <td><?php echo $row["username"] ?></td>
+                            <td><?php echo $row["pass"] ?></td>
+                            <td><?php echo $row["phone"] ?></td>
+                            <td><?php echo $row["email"] ?></td>
+                            <td><?php echo $row["address"] ?></td>
+                            <td><?php echo $row["city"] ?></td>
+                            <td><?php echo $row["country"] ?></td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        while ($row = $stmt->fetch()) {
-                        ?>
-                            <tr>
-                                <td><?php echo $row["id"] ?></td>
-                                <td><?php echo $row["name"] ?></td>
-                                <td><?php echo $row["username"] ?></td>
-                                <td><?php echo $row["pass"] ?></td>
-                                <td><?php echo $row["phone"] ?></td>
-                                <td><?php echo $row["email"] ?></td>
-                                <td><?php echo $row["address"] ?></td>
-                                <td><?php echo $row["city"] ?></td>
-                                <td><?php echo $row["country"] ?></td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </div>
+                    <?php } ?>
+                </tbody>
+            </table>
 <?php
         } else {
             echo "<p>No matches found</p>";

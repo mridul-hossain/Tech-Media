@@ -1,6 +1,6 @@
     <?php
     session_start();
-    require_once '../model.php';
+    require_once '../model/model.php';
 
     function fetchAllUsers()
     {
