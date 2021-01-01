@@ -37,13 +37,6 @@ if (isset($_POST["save"])) {
 
   $check = getimagesize($_FILES["image"]["tmp_name"]);
 
-<<<<<<< HEAD
-  if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
-    if (editInfo($data)) {
-      header('Location: ../Profile.php');
-    }
-  }
-=======
   if (empty($_POST["name"]) || !preg_match("/^[a-zA-Z\s]+$/", $_POST["name"]) || str_word_count($_POST["name"])<2) {
     header('Location: ../Profile.php?nameErr=*Give a valid name.');
   }
@@ -96,5 +89,4 @@ if (isset($_POST["save"])) {
 
   
 
->>>>>>> e5beb9d165a5c5f1df26d5da927678d721975dca
 }

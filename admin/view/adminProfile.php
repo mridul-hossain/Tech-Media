@@ -5,12 +5,9 @@ if ($_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
 require_once '../controllers/showAdminInfo.php';
-
-
 $info = fetchProfile($_SESSION['username']);
 ?>
-
-<html>
+<html lang="en">
 
 <head>
     <title></title>
