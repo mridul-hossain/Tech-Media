@@ -17,7 +17,7 @@
 
         <!-- <a href="adminDashboard.php" class="logo"><img src=""></a> !-->
         <div class="header-right">
-            <p style="font-family: cursive; color: darkblue;  font-weight: bold; font-size: xx-large;">Tech
+            <p style="font-family: 'Courier New', Courier, monospace; color: darkblue;  font-weight: bolder; font-size: xx-large;">Tech
                 Media</p>
             <input  type="text" name="search" placeholder="Search..">
             <a class="active" href="adminDashboard.php">Admin Dashboard</a>

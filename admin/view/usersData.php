@@ -15,7 +15,7 @@ $users = fetchAllUsers();
      <link rel="stylesheet" type="text/css" href="css/adminDashboard.css">
      <link rel="stylesheet" type="text/css" href="css/header_admin.css">
      <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
-     <link rel="stylesheet" type="text/css" href="../HnF/Footer.css">
+     <link rel="stylesheet" type="text/css" href="../../HnF/Footer.css">
      <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
      <script type="text/javascript">
           $(document).ready(function() {
@@ -91,7 +91,7 @@ $users = fetchAllUsers();
      </form>
 
      <?php
-     include '../HnF/Footer.php';
+     include '../../HnF/Footer.php';
      ?>
 </body>
 

@@ -15,8 +15,19 @@ $posts = fetchApprovedPosts();
     <link rel="stylesheet" type="text/css" href="css/adminDashboard.css">
     <link rel="stylesheet" type="text/css" href="css/header_admin.css">
     <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
-    <link rel="stylesheet" type="text/css" href="../HnF/Footer.css">
+    <link rel="stylesheet" type="text/css" href="../../HnF/Footer.css">
+    <style>
+        fieldset {
+            background-color: #eeeeee;
+        }
 
+        legend {
+            background-color: gray;
+            color: white;
+            padding: 5px 10px;
+            font-size: large;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,8 +38,9 @@ $posts = fetchApprovedPosts();
     <div class="main">
         <?php foreach ($posts as $i => $post) : ?>
             <fieldset>
+                <legend><?php echo $post["name"] ?></legend>
                 <div>
-                    <div style="font-size: larger;font-weight: bold;"><?php echo $post["name"] ?></div><br>
+                    <br>
                     <div style="font-size: large;"><?php echo $post["title"] ?></div>
                     <div style="font-style: italic;"><?php echo $post["time"] ?></div>
                     <div>
@@ -46,12 +58,11 @@ $posts = fetchApprovedPosts();
                     <input type="submit" name="removeBtn" id="removeBtn" value="Remove this post">
                 </div>
             </fieldset>
-
         <?php endforeach; ?>
     </div>
 
     <?php
-    include '../HnF/Footer.php';
+    include '../../HnF/Footer.php';
     ?>
 </body>
 

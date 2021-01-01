@@ -16,7 +16,7 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     <link rel="stylesheet" type="text/css" href="css/adminDashboard.css">
     <link rel="stylesheet" type="text/css" href="css/header_admin.css">
     <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
-    <link rel="stylesheet" type="text/css" href="../HnF/Footer.css">
+    <link rel="stylesheet" type="text/css" href="../../HnF/Footer.css">
 </head>
 
 <body>
@@ -93,7 +93,7 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
 
 
     <?php
-    include '../HnF/Footer.php';
+    include '../../HnF/Footer.php';
     ?>
 
 </body>

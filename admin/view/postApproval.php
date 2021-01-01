@@ -15,8 +15,19 @@ $pendings = fetchPendingPosts();
     <link rel="stylesheet" type="text/css" href="css/adminDashboard.css">
     <link rel="stylesheet" type="text/css" href="css/header_admin.css">
     <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
-    <link rel="stylesheet" type="text/css" href="../HnF/Footer.css">
+    <link rel="stylesheet" type="text/css" href="../../HnF/Footer.css">
+    <style>
+        fieldset {
+            background-color: #eeeeee;
+        }
 
+        legend {
+            background-color: gray;
+            color: white;
+            padding: 5px 10px;
+            font-size: large;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,13 +38,14 @@ $pendings = fetchPendingPosts();
     <div class="main">
         <?php foreach ($pendings as $i => $pending) : ?>
             <fieldset>
+                <legend><?php echo $pending["name"] ?></legend>
                 <div>
-                    <div style="font-size: larger;font-weight: bold;"><?php echo $pending["name"] ?></div><br>
+                    <br>
                     <div style="font-size: large;"><?php echo $pending["title"] ?></div>
                     <div style="font-style: italic;"><?php echo $pending["time"] ?></div>
                     <div>
                         <?php $fileName =  "../../" . $pending['image'];
-                        if (file_exists($fileName)) { ?>
+                        if (file_exists($fileName) && $pending['image'] != null) { ?>
                             <img src="<?php echo $fileName; ?>" class="profileImage" height="40%" width="40%">
                         <?php } else {
                             echo "";
@@ -52,7 +64,7 @@ $pendings = fetchPendingPosts();
     </div>
 
     <?php
-    include '../HnF/Footer.php';
+    include '../../HnF/Footer.php';
     ?>
 </body>
 
