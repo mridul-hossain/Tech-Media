@@ -17,6 +17,8 @@ function search($input)
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 }
+/** POST RELATED FUNCTIONS */
+
 function deletePost($id)
 {
     $conn = db_conn();
@@ -31,6 +33,20 @@ function deletePost($id)
 
     return true;
 }
+function approvePost($id){
+    $conn = db_conn();
+    $selectQuery = "UPDATE post approved=1 WHERE id=?";
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$id]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $conn = null;
+
+    return true;
+}
+
 function showPendingPosts()
 {
     $conn = db_conn();
