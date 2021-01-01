@@ -45,8 +45,8 @@ $posts = fetchApprovedPosts();
                     <div style="font-style: italic;"><?php echo $post["time"] ?></div>
                     <div>
                         <?php $fileName =  "../../" . $post['image'];
-                        if (file_exists($post['image'])) { ?>
-                            <img src="<?php echo $fileName; ?>" class="profileImage" height="40%" width="40%">
+                        if (file_exists($fileName) && $post['image'] != null) { ?>
+                            <img src="<?php echo $fileName; ?>" height="40%" width="40%">
                         <?php } else {
                             echo "";
                         } ?>

@@ -9,10 +9,14 @@ require_once '../controllers/deletePost.php';
 
 $pendings = fetchPendingPosts();
 
-if (array_key_exists('approveBtn', $_POST)) {
-    button1();
-} else if (array_key_exists('declineBtn', $_POST)) {
-    button2();
+if (isset($_POST['approveBtn'])) {
+    $id = (int) $_POST['post_id']; // <-- gotta protect from sql injection.
+    Approve($id);
+}
+
+if (isset($_POST['declineBtn'])) {
+    $id = (int) $_POST['post_id']; // <-- gotta protect from sql injection.
+    Delete($id);
 }
 ?>
 
@@ -65,9 +69,9 @@ if (array_key_exists('approveBtn', $_POST)) {
                         <div style="font-family:Georgia, 'Times New Roman', Times, serif;"><?php echo $pending["text"] ?></div>
                     </div>
                     <div>
+                        <input type="hidden" name="post_id" value="<?php echo $pending["id"]; ?>">
                         <input type="submit" name="approveBtn" id="approveBtn" value="Approve">
                         <input type="submit" name="declineBtn" id="declineBtn" value="Decline">
-                    </div>
                 </fieldset>
             </form>
 

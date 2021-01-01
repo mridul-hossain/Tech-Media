@@ -22,7 +22,7 @@ function search($input)
 function deletePost($id)
 {
     $conn = db_conn();
-    $selectQuery = "DELETE FROM `post` WHERE `id` = ?";
+    $selectQuery = "DELETE FROM post WHERE `id` = ?";
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([$id]);
@@ -33,9 +33,10 @@ function deletePost($id)
 
     return true;
 }
-function approvePost($id){
+function approvePost($id)
+{
     $conn = db_conn();
-    $selectQuery = "UPDATE post approved=1 WHERE id=?";
+    $selectQuery = "UPDATE post SET approved = 1 WHERE id=?";
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([$id]);
