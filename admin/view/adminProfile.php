@@ -131,7 +131,7 @@ $info = fetchProfile($_SESSION['username']);
                             <tr>
                                 <td class="profileTableButtonDiv">
                                     <input type="submit" name="save" value="Save" class="profileTableButtonSave">
-                                    <input type="submit" name="delete" value="Delete" class="profileTableButtonDelete">
+                                    <input type="hidden" name="delete" value="Delete" class="profileTableButtonDelete">
                                 </td>
                             </tr>
                         </table>

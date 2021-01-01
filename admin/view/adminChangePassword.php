@@ -4,7 +4,6 @@ if ($_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -40,20 +39,14 @@ if ($_SESSION["usertype"] != "admin") {
                 <input type="password" name="retypePassword" placeholder="Password">
                 <label class="text_error"><?php echo $passwordErr; ?></label>
             </div>
-
             <div>
                 <input type="submit" value="Save Change" name="submit">
-
             </div>
         </form>
     </div>
-
-
     <?php
     include '../../HnF/Footer.php';
     ?>
-
 </body>
-
 
 </html>

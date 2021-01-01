@@ -2,7 +2,7 @@
 session_start();
 require_once '../model/model.php';
 
-function Approve($id)
+function updatePassword($id,$data)
 {
-    return approvePost($id);
+    return editPassword($id,$data);
 }

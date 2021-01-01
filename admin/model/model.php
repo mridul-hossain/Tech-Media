@@ -2,21 +2,6 @@
 session_start();
 include("../../dbConnect.php");
 
-function search($input)
-{
-    $str = $input;
-    $conn = db_conn();
-    $selectQuery = "SELECT * FROM editor WHERE name LIKE '%{$str}%' ";
-
-    try {
-        $stmt = $conn->prepare($selectQuery);
-        $stmt->execute();
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $rows;
-}
 /** POST RELATED FUNCTIONS */
 
 function deletePost($id)
@@ -84,6 +69,39 @@ function showProfile($username)
     }
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     return $row;
+}
+
+function editInfo($data)
+{
+    $conn = db_conn();
+    $selectQuery = "UPDATE admin SET name = ?, email = ?, country = ?, city = ?, phone = ?, address = ?, gender = ?, dob = ?, image = ? where username = ?";
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([
+            $data['name'], $data['email'], $data['country'], $data['city'], $data['phone'], $data['address'], $data['gender'], $data['dob'], $data['image'], $data['username']
+        ]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
+    $conn = null;
+    return true;
+}
+function editPassword($id, $data)
+{
+    $conn = db_conn();
+    $selectQuery = "UPDATE admin set pass=? where ID = ?";
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([
+            $data['pass'], $id
+        ]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
+    $conn = null;
+    return true;
 }
 function showAllEditors()
 {
