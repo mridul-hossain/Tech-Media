@@ -26,6 +26,8 @@ $posts = fetchApprovedPosts();
             color: white;
             padding: 5px 10px;
             font-size: large;
+            border-radius: 5px;
+            margin-left: 5px;
         }
     </style>
 </head>
@@ -42,7 +44,7 @@ $posts = fetchApprovedPosts();
                 <div>
                     <br>
                     <div style="font-size: large;"><?php echo $post["title"] ?></div>
-                    <div style="font-style: italic;"><?php echo $post["time"] ?></div>
+                    <div style="font-style: italic; font-size: small;"><?php echo $post["time"] ?></div>
                     <div>
                         <?php $fileName =  "../../" . $post['image'];
                         if (file_exists($fileName) && $post['image'] != null) { ?>
@@ -58,6 +60,7 @@ $posts = fetchApprovedPosts();
                     <input type="submit" name="removeBtn" id="removeBtn" value="Remove this post">
                 </div>
             </fieldset>
+            <br>
         <?php endforeach; ?>
     </div>
 

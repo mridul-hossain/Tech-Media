@@ -101,7 +101,7 @@ function showAllEditors()
 function showEditor($id)
 {
     $conn = db_conn();
-    $selectQuery = "SELECT * FROM `editor` where ID = ?";
+    $selectQuery = "SELECT * FROM `editor` where id = ?";
 
     try {
         $stmt = $conn->prepare($selectQuery);
@@ -129,7 +129,7 @@ function showAllUsers()
 function showUser($id)
 {
     $conn = db_conn();
-    $selectQuery = "SELECT * FROM `user` where ID = ?";
+    $selectQuery = "SELECT * FROM `user` where id = ?";
 
     try {
         $stmt = $conn->prepare($selectQuery);

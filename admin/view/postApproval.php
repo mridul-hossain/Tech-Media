@@ -39,6 +39,8 @@ if (isset($_POST['declineBtn'])) {
             color: white;
             padding: 5px 10px;
             font-size: large;
+            border-radius: 5px;
+            margin-left: 5px;
         }
     </style>
 </head>
@@ -56,7 +58,7 @@ if (isset($_POST['declineBtn'])) {
                     <div>
                         <br>
                         <div style="font-size: large;"><?php echo $pending["title"] ?></div>
-                        <div style="font-style: italic;"><?php echo $pending["time"] ?></div>
+                        <div style="font-style: italic;font-size: small;"><?php echo $pending["time"] ?></div>
                         <div>
                             <?php $fileName =  "../../" . $pending['image'];
                             if (file_exists($fileName) && $pending['image'] != null) { ?>

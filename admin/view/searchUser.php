@@ -7,7 +7,7 @@ try {
 }
 try {
     if (isset($_REQUEST["term"])) {
-        $sql = "SELECT * FROM user WHERE name LIKE :term";
+        $sql = "SELECT * FROM user WHERE `name` LIKE :term";
         $stmt = $pdo->prepare($sql);
         $term = $_REQUEST["term"] . '%';
         $stmt->bindParam(":term", $term);
@@ -31,7 +31,6 @@ try {
                 <tbody>
                     <?php
                     while ($row = $stmt->fetch()) {
-                        //echo "<p>" . $row["name"] . "</p>";
                     ?>
                         <tr>
                             <td><?php echo $row["id"] ?></td>

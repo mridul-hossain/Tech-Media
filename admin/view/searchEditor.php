@@ -7,7 +7,7 @@ try {
 }
 try {
     if (isset($_REQUEST["term"])) {
-        $sql = "SELECT * FROM editor WHERE name LIKE :term";
+        $sql = "SELECT * FROM editor WHERE `name` LIKE :term";
         $stmt = $pdo->prepare($sql);
         $term = $_REQUEST["term"] . '%';
         $stmt->bindParam(":term", $term);

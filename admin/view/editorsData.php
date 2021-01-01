@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
+if ($_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
 require_once '../controllers/showEditorInfo.php';
