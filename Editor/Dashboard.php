@@ -16,9 +16,11 @@ $commentData = fetchAllCommentss();
 
 	<?php include 'Header.php'; ?>
 	<form method="post">
-		<div>
+		<div class="dashboardDiv">
+			<?php include "Sidebar.php"; ?>
 			<?php foreach($postData as $i=>$data): ?>
-			<div class="postMainDiv">
+			<div class="dashboardDivPosts">
+				<div class="postMainDiv">
 				<div class="postHeader">
 				<div class="postHeaderContent">
 					<div>
@@ -64,7 +66,8 @@ $commentData = fetchAllCommentss();
 					<textarea name="commentText" class="commentTextArea"></textarea>
 					<input type="submit" name="comment" value="Comment" class="profileTableButtonSave">
 				</div>
-		</div>
+			</div>
+			</div>
 	<?php endforeach; ?>
 </div>
 </form>

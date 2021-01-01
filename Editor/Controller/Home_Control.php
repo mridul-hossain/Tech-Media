@@ -10,3 +10,5 @@ function fetchAllCommentss()
 {
 	return showAllComments();
 }
+
+?>

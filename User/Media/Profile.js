@@ -11,9 +11,9 @@ function nameValidation(){
 }
 
 function emailValidation(){
-	var email = document.getElementById("email");
+	var email = document.getElementById("password");
 
-	if(email.value == "" || email.value == null){
+	if(password.value == "" || password.value == null){
 		document.getElementById("emailErr").style.opacity=1;
 	}
 	else
@@ -45,20 +45,6 @@ function cityValidation(){
 	else
 	{
 		document.getElementById("cityErr").style.opacity=0;
-	}
-}
-
-function addressValidation(){
-	var address = document.getElementById("address");
-
-	
-
-	if(address.value == "" || address.value == null){
-		document.getElementById("addressErr").style.opacity=1;
-	}
-	else
-	{
-		document.getElementById("addressErr").style.opacity=0;
 	}
 }
 
