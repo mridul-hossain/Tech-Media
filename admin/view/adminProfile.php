@@ -18,7 +18,6 @@ $info = fetchProfile($_SESSION['username']);
     <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
     <link rel="stylesheet" type="text/css" href="../../HnF/Footer.css">
     <script type="text/javascript" src="js/profile.js"></script>
-
 </head>
 
 <body>

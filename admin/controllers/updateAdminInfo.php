@@ -26,7 +26,7 @@ if (isset($_POST["save"])) {
     } else if (empty($_POST["gender"])) {
         header('Location: ../view/adminProfile.php?genderErr=*Gender is required');
     } else if (empty($_POST["dob"]) || $_POST["dob"] >= date('Y-m-d')) {
-        header('Location: ../view/adminProfile.php?dobErr=*Give your valid birthdate.');
+        header('Location: ../view/adminProfile.php?dobErr=*Give your valid birth date.');
     } else if (empty($_POST["city"])) {
         header('Location: ../view/adminProfile.php?cityErr=*Give your city name.');
     } else if (empty($_POST["country"])) {
