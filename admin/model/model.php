@@ -51,7 +51,7 @@ function approvePost($id)
 function showPendingPosts()
 {
     $conn = db_conn();
-    $selectQuery = 'SELECT * FROM post WHERE approved = 0 ';
+    $selectQuery = 'SELECT user.name, user.image, post.* FROM post,user WHERE user.id = post.user_id and approved = 0 ';
     try {
         $stmt = $conn->query($selectQuery);
     } catch (PDOException $e) {
@@ -63,7 +63,7 @@ function showPendingPosts()
 function showApprovedPosts()
 {
     $conn = db_conn();
-    $selectQuery = 'SELECT * FROM post WHERE approved = 1 ';
+    $selectQuery = 'SELECT user.name, user.image, post.* FROM post,user WHERE user.id = post.user_id and approved = 1 ';
     try {
         $stmt = $conn->query($selectQuery);
     } catch (PDOException $e) {

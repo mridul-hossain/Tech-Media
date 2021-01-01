@@ -1,10 +1,12 @@
 <?php
 require_once 'Model_.php';
 
-function fetchAllPosts(){
+function fetchAllPosts()
+{
 	return showAllPosts();
 }
 
-function fetchAllCommentss(){
+function fetchAllCommentss()
+{
 	return showAllComments();
 }

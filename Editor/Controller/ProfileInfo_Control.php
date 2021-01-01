@@ -2,12 +2,12 @@
 
 
 
-if(isset($_POST["save"])) {
+if (isset($_POST["save"])) {
 
-    session_start();
+  session_start();
 
-require_once '../Model_.php';
-  
+  require_once '../Model_.php';
+
   $data['name'] = $_POST['name'];
   $data['phone'] = $_POST['phone'];
   $data['email'] = $_POST['email'];
@@ -32,20 +32,13 @@ require_once '../Model_.php';
   // }
 
   $target_dir = "../Pictures/";
-$target_file = $target_dir . basename($_FILES["image"]["name"]);
-$uploadOk = 1;
+  $target_file = $target_dir . basename($_FILES["image"]["name"]);
+  $uploadOk = 1;
 
 
-    if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
-      if(editInfo($data))
-      {
-        header('Location: ../Profile.php');
-      }
+  if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+    if (editInfo($data)) {
+      header('Location: ../Profile.php');
     }
-
-  
-
+  }
 }
-
-
-?>

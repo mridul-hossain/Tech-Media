@@ -4,9 +4,9 @@ require_once 'DbConnection.php';
 
 function addEditor($data)
 {
-    $conn= db_conn();
+    $conn = db_conn();
     $query = "INSERT INTO editor(pass, name, phone, email, city, country, dob, username, gender) VALUES(:pass,:name,:phone,:email,:city,:country,:dob,:username,:gender)";
-    try{
+    try {
         $stmt = $conn->prepare($query);
         $stmt->execute([
             ':pass' => $data['pass'],
@@ -19,30 +19,25 @@ function addEditor($data)
             ':username' => $data['username'],
             ':gender' => $data['gender']
         ]);
-    }
-    catch(PDOException $e){
+    } catch (PDOException $e) {
         echo $e->getMessage();
     }
 
     $conn = null;
     return true;
-
 }
 
 function login($data)
 {
     $conn = db_conn();
     $query = "SELECT * FROM editor WHERE username = :username AND pass = :password";
-    try
-    {
+    try {
         $stmt = $conn->prepare($query);
         $stmt->execute([
             ':username' => $data['username'],
             ':password' => $data['password']
         ]);
-    }
-    catch(PDOException $e)
-    {
+    } catch (PDOException $e) {
         echo $e->getMessage();
     }
 
@@ -55,13 +50,10 @@ function showInfo($data)
 {
     $conn = db_conn();
     $query = "SELECT * FROM editor WHERE username = ?";
-    try
-    {
+    try {
         $stmt = $conn->prepare($query);
         $stmt->execute([$data]);
-    }
-    catch(PDOException $e)
-    {
+    } catch (PDOException $e) {
         echo $e->getMessage();
     }
 
@@ -71,29 +63,31 @@ function showInfo($data)
 }
 
 
-function editInfo($data){
+function editInfo($data)
+{
     $conn = db_conn();
     $selectQuery = "UPDATE editor set name = ?, email = ?, country = ?, city = ?, phone = ?, address = ?, gender = ?, dob = ?, image = ? where username = ?";
-    try{
+    try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([
-            $data['name'], $data['email'], $data['country'],$data['city'], $data['phone'], $data['address'], $data['gender'], $data['dob'], $data['image'], $data['username']
+            $data['name'], $data['email'], $data['country'], $data['city'], $data['phone'], $data['address'], $data['gender'], $data['dob'], $data['image'], $data['username']
         ]);
-    }catch(PDOException $e){
+    } catch (PDOException $e) {
         echo $e->getMessage();
     }
-    
+
     $conn = null;
     return true;
 }
 
 
-function showAllPosts(){
+function showAllPosts()
+{
     $conn = db_conn();
     $selectQuery = 'SELECT user.name, user.image, post.* FROM post,user WHERE user.id = post.user_id ';
-    try{
+    try {
         $stmt = $conn->query($selectQuery);
-    }catch(PDOException $e){
+    } catch (PDOException $e) {
         echo $e->getMessage();
     }
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -101,12 +95,13 @@ function showAllPosts(){
 }
 
 
-function showAllComments(){
+function showAllComments()
+{
     $conn = db_conn();
     $selectQuery = 'SELECT user.name, user.image, comment.* FROM comment,user,post WHERE comment.post_id = post.id AND comment.user_id = user.id';
-    try{
+    try {
         $stmt = $conn->query($selectQuery);
-    }catch(PDOException $e){
+    } catch (PDOException $e) {
         echo $e->getMessage();
     }
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);

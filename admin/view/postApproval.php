@@ -9,6 +9,7 @@ require_once '../controllers/deletePost.php';
 
 $pendings = fetchPendingPosts();
 
+
 if (isset($_POST['approveBtn'])) {
     $id = (int) $_POST['post_id']; // <-- gotta protect from sql injection.
     Approve($id);

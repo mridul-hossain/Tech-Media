@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
+if ($_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
 ?>
@@ -22,12 +22,11 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     include 'sidebar_admin.html';
     ?>
     <div class="main">
-        <form method="post" action="#">
+        <form method="post" action="../controllers/updateAdminPassword.php">
             <div class="form-input">
                 <label>Old Password</label>
                 <br>
                 <input type="text" name="password" value="2524" disabled>
-                <label class="text_error"><?php echo $passwordErr; ?></label>
             </div>
             <div class="form-input">
                 <label>Enter Password</label>

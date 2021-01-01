@@ -6,6 +6,3 @@ function fetchInfo($data)
 {
 	return showInfo($data);
 }
-
-
-?>
