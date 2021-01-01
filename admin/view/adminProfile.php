@@ -26,7 +26,7 @@ $info = fetchProfile($_SESSION['username']);
     include 'sidebar_admin.html';
     include 'header_admin.php';
     ?>
-    <form method="post" action="controllers/showAdminInfo.php" enctype="multipart/form-data">
+    <form method="post" action="../controllers/updateAdminInfo.php" enctype="multipart/form-data">
         <div class="main">
             <div class="divFieldset">
                 <fieldset class="fieldsetProfile">
