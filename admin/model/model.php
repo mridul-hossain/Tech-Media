@@ -17,6 +17,20 @@ function search($input)
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 }
+function deletePost($id)
+{
+    $conn = db_conn();
+    $selectQuery = "DELETE FROM `post` WHERE `id` = ?";
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$id]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $conn = null;
+
+    return true;
+}
 function showPendingPosts()
 {
     $conn = db_conn();

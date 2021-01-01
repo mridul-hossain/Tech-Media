@@ -20,4 +20,3 @@ if(isset($_POST['submit'])){
 else{
 	echo "Please try again!";
 }
-?>

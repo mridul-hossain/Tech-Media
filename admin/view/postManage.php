@@ -28,11 +28,22 @@ $posts = fetchApprovedPosts();
         <?php foreach ($posts as $i => $post) : ?>
             <fieldset>
                 <div>
+                    <div style="font-size: larger;font-weight: bold;"><?php echo $post["name"] ?></div><br>
                     <div style="font-size: large;"><?php echo $post["title"] ?></div>
                     <div style="font-style: italic;"><?php echo $post["time"] ?></div>
-                    <div><?php echo $post["image"] ?></div>
+                    <div>
+                        <?php $fileName =  "../../" . $post['image'];
+                        if (file_exists($post['image'])) { ?>
+                            <img src="<?php echo $fileName; ?>" class="profileImage" height="40%" width="40%">
+                        <?php } else {
+                            echo "";
+                        } ?>
+                    </div>
                     <br>
                     <div style="font-family:Georgia, 'Times New Roman', Times, serif;"><?php echo $post["text"] ?></div>
+                </div>
+                <div>
+                    <input type="submit" name="removeBtn" id="removeBtn" value="Remove this post">
                 </div>
             </fieldset>
 

@@ -112,6 +112,3 @@ function showAllComments(){
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 }
-
-
-?>

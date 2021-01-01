@@ -14,11 +14,12 @@
         <label>Tech Media</label>
         </div>
         !-->
-        <label style="font-family: cursive;text-align: left; color: darkblue;  font-weight: bold; font-size: xx-large;">Tech
-            Media</label>
+
         <!-- <a href="adminDashboard.php" class="logo"><img src=""></a> !-->
         <div class="header-right">
-            <input type="text" name="search" placeholder="Search..">
+            <p style="font-family: cursive; color: darkblue;  font-weight: bold; font-size: xx-large;">Tech
+                Media</p>
+            <input  type="text" name="search" placeholder="Search..">
             <a class="active" href="adminDashboard.php">Admin Dashboard</a>
             <a href="notification.php">Notification</a>
             <a href="adminLogout.php">Logout</a>

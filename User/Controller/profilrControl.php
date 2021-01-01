@@ -10,4 +10,3 @@
 		header("Location: ../Login.php");
 		echo "Wrong Username or, Password!";
 	}
-?>

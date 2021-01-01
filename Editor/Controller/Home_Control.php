@@ -8,5 +8,3 @@ function fetchAllPosts(){
 function fetchAllCommentss(){
 	return showAllComments();
 }
-
-?>

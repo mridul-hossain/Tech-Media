@@ -4,7 +4,7 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
 require_once '../controllers/showPendingPosts.php';
-$notifications = fetchPendingPosts();
+$pendings = fetchPendingPosts();
 ?>
 
 <!DOCTYPE html>
@@ -21,21 +21,33 @@ $notifications = fetchPendingPosts();
 
 <body>
     <?php
-    include 'header_admin.php';
     include 'sidebar_admin.html';
+    include 'header_admin.php';
     ?>
     <div class="main">
-        <?php foreach ($notifications as $i => $notification) : ?>
+        <?php foreach ($pendings as $i => $pending) : ?>
             <fieldset>
                 <div>
-                    <div style="font-size: large;"><?php echo $notification["title"] ?></div>
-                    <div style="font-style: italic;"><?php echo $notification["time"] ?></div>
-                    <div><?php echo $notification["image"] ?></div>
+                    <div style="font-size: larger;font-weight: bold;"><?php echo $pending["name"] ?></div><br>
+                    <div style="font-size: large;"><?php echo $pending["title"] ?></div>
+                    <div style="font-style: italic;"><?php echo $pending["time"] ?></div>
+                    <div>
+                        <?php $fileName =  "../../" . $pending['image'];
+                        if (file_exists($fileName)) { ?>
+                            <img src="<?php echo $fileName; ?>" class="profileImage" height="40%" width="40%">
+                        <?php } else {
+                            echo "";
+                        } ?>
+                    </div>
                     <br>
-                    <div style="font-family:Georgia, 'Times New Roman', Times, serif;"><?php echo $notification["text"] ?></div>
+                    <div style="font-family:Georgia, 'Times New Roman', Times, serif;"><?php echo $pending["text"] ?></div>
+                </div>
+                <div>
+                    <input type="submit" name="approveBtn" id="approveBtn" value="Approve">
+                    <input type="submit" name="declineBtn" id="declineBtn" value="Decline">
                 </div>
             </fieldset>
-
+            <br>
         <?php endforeach; ?>
     </div>
 

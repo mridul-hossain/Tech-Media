@@ -42,4 +42,3 @@ $str = $_GET['q'];
                     
                     echo '</tbody>';
                     echo '</table>';
-?>
