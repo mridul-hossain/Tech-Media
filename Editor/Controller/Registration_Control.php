@@ -1,5 +1,5 @@
 <?php
-require_once '../Model_.php';
+require_once '../Model/Model_.php';
 
 if(isset($_POST['Submit'])){
 
@@ -16,47 +16,47 @@ if(isset($_POST['Submit'])){
 
     
   if (empty($_POST["name"]) || !preg_match("/^[a-zA-Z\s]+$/", $_POST["name"]) || str_word_count($_POST["name"])<2) {
-    header('Location: ../Registration.php?nameErr=*Give a valid name.');
+    header('Location: ../View/Registration.php?nameErr=*Give a valid name.');
   }
   else if (empty($_POST["email"])) {
-    header('Location: ../Registration.php?emailErr=*Type a valid Email.');
+    header('Location: ../View/Registration.php?emailErr=*Type a valid Email.');
   }
 
   else if (empty($_POST["username"])) {
-    header('Location: ../Registration.php?usernameErr=*Please select give a username!');
+    header('Location: ../View/Registration.php?usernameErr=*Please select give a username!');
   }
 
   else if (empty($_POST["password"])) {
-    header('Location: ../Registration.php?passwordErr=*Please give a password.');
+    header('Location: ../View/Registration.php?passwordErr=*Please give a password.');
   }
 
   else if (empty($_POST["gender"])) {
-    header('Location: ../Registration.php?genderErr=*Gender is required');
+    header('Location: ../View/Registration.php?genderErr=*Gender is required');
   }
 
   else if (empty($_POST["dob"]) || $_POST["dob"] >= date('Y-m-d')) {
-    header('Location: ../Registration.php?dobErr=*Give your valid birthdate.');
+    header('Location: ../View/Registration.php?dobErr=*Give your valid birthdate.');
   }
 
   else if (empty($_POST["password"]) || $_POST["password"] != $_POST["cpassword"]) {
-    header('Location: ../Registration.php?cpasswordErr=*Password does not match.');
+    header('Location: ../View/Registration.php?cpasswordErr=*Password does not match.');
   }
 
   else if (empty($_POST["city"])) {
-    header('Location: ../Registration.php?cityErr=*Give your city name.');
+    header('Location: ../View/Registration.php?cityErr=*Give your city name.');
   }
 
   else if (empty($_POST["country"])) {
-    header('Location: ../Registration.php?countryErr=*Give your country name.');
+    header('Location: ../View/Registration.php?countryErr=*Give your country name.');
   }
 
   else if (empty($_POST["phone"])) {
-    header('Location: ../Registration.php?phoneErr=*Type your phone number.');
+    header('Location: ../View/Registration.php?phoneErr=*Type your phone number.');
   }
   else{
     if(addEditor($data))
     {
-        header('Location: ../Login.php');
+        header('Location: ../View/Login.php');
     }
   }
 

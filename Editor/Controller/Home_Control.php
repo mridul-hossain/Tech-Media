@@ -1,13 +1,15 @@
 <?php
-require_once 'Model_.php';
+require_once '../Model/Model_.php';
 
-function fetchAllPosts()
-{
+function fetchAllPosts(){
 	return showAllPosts();
 }
 
-function fetchAllCommentss()
-{
+function fetchAllPendingPosts(){
+	return showAllPendingPosts();
+}
+
+function fetchAllCommentss(){
 	return showAllComments();
 }
 
