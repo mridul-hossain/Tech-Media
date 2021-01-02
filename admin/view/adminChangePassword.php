@@ -47,6 +47,8 @@ $oldPass = showPassword($_SESSION['username']);
             </div>
             <div>
                 <input type="submit" value="Save Change" name="submit">
+                <label class="text_error"><?php if (isset($_GET['msg'])) echo $_GET['msg']; ?></label>
+
             </div>
         </form>
     </div>
