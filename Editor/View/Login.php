@@ -11,6 +11,7 @@
     <div id="main" style="position: relative; padding-left: 10%">
       <form>
         <h1 id="h">Login</h1>
+        <label><span style="color: red;"><?php if(isset($_GET['mesaage'])) echo $_GET['mesaage']; ?></span></label><br>
         <i class="fa fa-user icon"></i>
         <input type="text" id="name" name="name" placeholder="Enter your name" onblur="nameValidation()"><br><br>
         <label class="errMessage" id="nameErr1">Name cannot be empty.</label>

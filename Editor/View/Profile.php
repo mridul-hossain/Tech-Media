@@ -31,7 +31,7 @@ $info = fetchInfo($_SESSION['username']);
 										<?php $fileName="../Pictures/".$info['image']; if(file_exists($fileName)){ ?>
 											<img src="<?php echo $fileName; ?>" class="profileImage">
 										<?php }else{?>
-											<img src=../Pictures/user.png" class="profileImage">
+											<img src="../Pictures/user.png" class="profileImage">
 										<?php }?> 
 									</td>
 								</tr>

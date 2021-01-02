@@ -20,7 +20,7 @@
 		<table class="tableHeader">
 			<tr>
 				<td class="tdHeader"><a href="Dashboard.php" class="content">Home</a></td>
-				<td class="tdHeader"><a href="#" class="content">Notification</a></td>
+				<td class="tdHeader"><a href="Notification.php" class="content" >Notification</a></td>
 				<td class="tdHeader"><a href="Logout.php" class="content">Logout</a></td>
 			</tr>
 		</table>

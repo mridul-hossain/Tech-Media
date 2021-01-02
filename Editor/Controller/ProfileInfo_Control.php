@@ -92,4 +92,17 @@ require_once '../Model/Model_.php';
 }
 
 
+if(isset($_POST['delete'])){
+
+  session_start();
+  require_once '../Model/Model_.php';
+
+  $data = $_SESSION['username'];
+
+  if(deleteEditor($data)){
+    header('Location: ../View/Home.php');
+  }
+}
+
+
 ?>

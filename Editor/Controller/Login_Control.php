@@ -21,7 +21,7 @@ session_start();
 			header('Location: ../View/Dashboard.php');
 		}
 		else{
-			$message = "Error";
+			$message = "Wrong username or, password!";
 		header("Location: ../View/Login.php?mesaage=".$message);
 	}
 	}

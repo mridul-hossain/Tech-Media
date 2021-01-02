@@ -29,6 +29,23 @@ function addEditor($data)
 
 }
 
+
+function deleteEditor($data)
+{
+    $conn = db_conn();
+    $selectQuery = "DELETE FROM editor WHERE username = ?";
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$data]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $conn = null;
+
+    return true;
+}
+
+
 function login($data)
 {
     $conn = db_conn();
@@ -104,6 +121,20 @@ function showAllPosts(){
 function showAllPendingPosts(){
     $conn = db_conn();
     $selectQuery = 'SELECT user.name, user.image, post.* FROM post,user WHERE user.id = post.user_id AND post.shown = 0';
+    try{
+        $stmt = $conn->query($selectQuery);
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+}
+
+
+
+function pendingPostsCount(){
+    $conn = db_conn();
+    $selectQuery = 'SELECT count(*) FROM post WHERE shown = 0';
     try{
         $stmt = $conn->query($selectQuery);
     }catch(PDOException $e){
