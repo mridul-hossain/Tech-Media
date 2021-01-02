@@ -4,7 +4,7 @@ session_start();
 if ($_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
-require_once '../controllers/showAdminInfo.php';
+require_once '../controllers/showUserInfo.php';
 $info = fetchUser($_GET['id']);
 ?>
 <html lang="en">
@@ -27,12 +27,12 @@ $info = fetchUser($_GET['id']);
     include 'sidebar_admin.html';
     include 'header_admin.php';
     ?>
-    <form method="post" action="../controllers/updateAdminInfo.php" enctype="multipart/form-data">
+    <form method="post" action="../controllers/updateUserInfo.php" enctype="multipart/form-data">
         <div class="main">
             <div class="divFieldset">
                 <fieldset class="fieldsetProfile">
                     <div>
-                        <h3 class="profileTableHead">Personal Information</h3>
+                        <h3 class="profileTableHead">Edit User</h3>
                         <div class="profileImageDiv">
                             <table>
                                 <tr>

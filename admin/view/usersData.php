@@ -82,7 +82,7 @@ $users = fetchAllUsers();
                                              <td><?php echo $user["address"] ?></td>
                                              <td><?php echo $user["city"] ?></td>
                                              <td><?php echo $user["country"] ?></td>
-                                             <td><a href="editUser.php?id=<?php echo $editor['id'] ?>">Edit</a>&nbsp<a href="../controllers/deleteUser.php?id=<?php echo $editor['id'] ?>">Delete</a></td>
+                                             <td><a href="editUser.php?id=<?php echo $user['id'] ?>">Edit</a>&nbsp<a href="../controllers/deleteUser.php?id=<?php echo $user['id'] ?>">Delete</a></td>
                                         </tr>
                                    <?php endforeach; ?>
                               </tbody>
