@@ -4,6 +4,7 @@ if ($_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
 require_once '../controllers/showEditorInfo.php';
+
 $editors = fetchAllEditors();
 ?>
 
