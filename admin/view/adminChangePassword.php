@@ -3,6 +3,10 @@ session_start();
 if ($_SESSION["usertype"] != "admin") {
     header("location:adminLogin.php");
 }
+require_once '../model/model.php';
+$passwordErr = "";
+$re_PasswordErr = "";
+$oldPass = showPassword($_SESSION['username']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,19 +29,19 @@ if ($_SESSION["usertype"] != "admin") {
             <div class="form-input">
                 <label>Old Password</label>
                 <br>
-                <input type="text" name="password" value="2524" disabled>
+                <input type="text" name="password" value="<?php echo $oldPass['pass']; ?>" disabled>
             </div>
             <div class="form-input">
                 <label>Enter Password</label>
                 <br>
                 <input type="password" name="password" placeholder="Password">
-                <label class="text_error"><?php echo $passwordErr; ?></label>
+                <label class="text_error"><?php if (isset($_GET['passwordErr'])) echo $_GET['passwordErr']; ?></label>
             </div>
             <div class="form-input">
                 <label>Re-type Password</label>
                 <br>
-                <input type="password" name="retypePassword" placeholder="Password">
-                <label class="text_error"><?php echo $passwordErr; ?></label>
+                <input type="password" name="retypePassword" placeholder="Re-Type Password">
+                <label class="text_error"><?php if (isset($_GET['re_passwordErr'])) echo $_GET['re_passwordErr']; ?></label>
             </div>
             <div>
                 <input type="submit" value="Save Change" name="submit">

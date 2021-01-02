@@ -70,7 +70,19 @@ function showProfile($username)
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     return $row;
 }
-
+function showPassword($username)
+{
+    $conn = db_conn();
+    $selectQuery = "SELECT pass FROM `admin` where username = ?";
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$username]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $row;
+}
 function editInfo($data)
 {
     $conn = db_conn();
@@ -87,14 +99,14 @@ function editInfo($data)
     $conn = null;
     return true;
 }
-function editPassword($id, $data)
+function editPassword($data, $username)
 {
     $conn = db_conn();
-    $selectQuery = "UPDATE admin set pass=? where ID = ?";
+    $selectQuery = "UPDATE admin SET pass=? WHERE username = ?";
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([
-            $data['pass'], $id
+            $data['pass'], $username
         ]);
     } catch (PDOException $e) {
         echo $e->getMessage();
