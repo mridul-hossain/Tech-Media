@@ -17,7 +17,7 @@ if (isset($_POST['approveBtn'])) {
 
 if (isset($_POST['declineBtn'])) {
     $id = (int) $_POST['post_id']; // <-- gotta protect from sql injection.
-    Delete($id);
+    deletePost($id);
 }
 ?>
 

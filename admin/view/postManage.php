@@ -5,6 +5,8 @@ if ($_SESSION["usertype"] != "admin") {
 }
 require_once '../controllers/showApprovedPosts.php';
 $posts = fetchApprovedPosts();
+$commentData = fetchAllComments();
+
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +60,35 @@ $posts = fetchApprovedPosts();
                 </div>
                 <div>
                     <input type="submit" name="removeBtn" id="removeBtn" value="Remove this post">
+                </div>
+                <div class="postCommentSeperator"></div>
+                <?php foreach ($commentData as $i => $cData) : if ($cData['post_id'] == $data['id']) { ?>
+                        <div class="postComment">
+                            <div class="postHeaderContent">
+                                <div>
+                                    <?php $fileName = "../Pictures/" . $cData['image'];
+                                    if (file_exists($fileName)) { ?>
+                                        <td><img src="<?php echo $fileName; ?>" class="postCommentUserImage"></td>
+                                    <?php } else { ?>
+                                        <td><img src="../Pictures/user.png" class="postCommentUserImage"></td>
+                                    <?php } ?>
+                                </div>
+                                <div class="postHeaderText">
+                                    <label class="postCommentName"><?php echo $cData["name"] ?></label>
+                                    <label class="postCommentTime"><?php echo $cData["time"] ?></label>
+                                </div>
+                            </div>
+                            <div>
+                                <p><?php echo $cData["text"] ?></p>
+                            </div>
+                            <input type="hidden" name="commentId" value="<?php echo $cData['id'] ?>">
+                            <input type="submit" name="hideComment" value="Hide Comment" class="commentHideButton">
+                        </div>
+                    <?php } ?>
+                <?php endforeach; ?>
+                <input type="hidden" name="postId" value="<?php echo $data['id'] ?>">
+                <div class="commentDivHideButton">
+                    <input type="submit" name="hidePost" value="Hide Post" class="postHideButton">
                 </div>
             </fieldset>
             <br>

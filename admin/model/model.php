@@ -4,10 +4,58 @@ include("../../dbConnect.php");
 
 /** POST RELATED FUNCTIONS */
 
+function hidePost($id)
+{
+    $conn = db_conn();
+    $selectQuery = "UPDATE post SET visibility = 0 WHERE id=?";
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$id]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $conn = null;
+
+    return true;
+}
+
+
+
 function deletePost($id)
 {
     $conn = db_conn();
     $selectQuery = "DELETE FROM post WHERE `id` = ?";
+    try {
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([$id]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $conn = null;
+
+    return true;
+}
+
+
+function showAllComments()
+{
+    $conn = db_conn();
+    $selectQuery = 'SELECT user.name, user.image, comment.* FROM comment,user,post WHERE comment.post_id = post.id AND comment.user_id = user.id AND comment.shown = 1';
+    try {
+        $stmt = $conn->query($selectQuery);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+}
+
+
+
+function hideComment($id)
+{
+    $conn = db_conn();
+    $selectQuery = "UPDATE comment SET shown = 0 WHERE id=?";
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([$id]);
@@ -57,6 +105,9 @@ function showApprovedPosts()
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 }
+
+
+/** PROFILE MODEL */
 function showProfile($username)
 {
     $conn = db_conn();

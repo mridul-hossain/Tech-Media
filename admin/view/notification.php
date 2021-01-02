@@ -1,10 +1,8 @@
 <?php
-session_start();
-if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
-    header("location:adminLogin.php");
-}
-require_once '../controllers/showNotification.php';
-$notifications = fetchAllNotifications();
+require_once "../controllers/showPendingPosts.php";
+
+$postData = fetchPendingPosts();
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +14,6 @@ $notifications = fetchAllNotifications();
     <link rel="stylesheet" type="text/css" href="css/header_admin.css">
     <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
     <link rel="stylesheet" type="text/css" href="../../HnF/Footer.css">
-
 </head>
 
 <body>
@@ -24,24 +21,25 @@ $notifications = fetchAllNotifications();
     include 'header_admin.php';
     include 'sidebar_admin.php';
     ?>
-    <div class="main">
-        <?php foreach ($notifications as $i => $notification) : ?>
-            <fieldset>
-                <div>
-                    <div style="font-size: large;"><?php echo $notification["title"] ?></div>
-                    <div style="font-style: italic;"><?php echo $notification["time"] ?></div>
-                    <div><?php echo $notification["image"] ?></div>
-                    <br>
-                    <div style="font-family:Georgia, 'Times New Roman', Times, serif;"><?php echo $notification["text"] ?></div>
-                </div>
-            </fieldset>
 
-        <?php endforeach; ?>
-    </div>
+    <form method="post" action="">
+        <div class="dashboardDiv">
+            <?php include "Sidebar.php"; ?>
+            <div class="dashboardDivPosts">
+                <?php foreach ($postData as $i => $data) : ?>
+                    <div>
+                        <div class="postMainDiv">
 
-    <?php
-    include 'HnF/Footer.php';
-    ?>
+                            <label><?php echo $data['name'] ?>'s post need approval.</label>
+
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </form>
+    <?php include "Footer.php"; ?>
+
 </body>
 
 </html>
