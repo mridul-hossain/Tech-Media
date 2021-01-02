@@ -35,7 +35,7 @@ $posts = fetchApprovedPosts();
 <body>
     <?php
     include 'header_admin.php';
-    include 'sidebar_admin.html';
+    include 'sidebar_admin.php';
     ?>
     <div class="main">
         <?php foreach ($posts as $i => $post) : ?>

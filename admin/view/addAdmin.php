@@ -22,7 +22,8 @@
             width: 400px;
             border-top: 2px solid black;
         }
-        label{
+
+        label {
             color: white;
         }
     </style>
@@ -42,7 +43,7 @@
 <body>
 
     <?php
-    include 'sidebar_admin.html';
+    include 'sidebar_admin.php';
     include 'header_admin.php';
     ?>
     <form method="post" action="Controller/Registration_Control.php">
@@ -80,7 +81,7 @@
                         <input type="date" name="dob" style="float: left;">
                     </div>
                     <span class="text_error"><?php if (isset($_GET['dobErr'])) echo $_GET['dobErr']; ?></span>
-                </div><br><br>  
+                </div><br><br>
                 <input type="text" name="city" style="position: relative; bottom: 1px">
                 <span class="text_error"><?php if (isset($_GET['cityErr'])) echo $_GET['cityErr']; ?></span><br><br>
                 <input type="text" name="country" style="position: relative; bottom: 1px">

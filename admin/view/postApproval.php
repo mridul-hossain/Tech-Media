@@ -48,7 +48,7 @@ if (isset($_POST['declineBtn'])) {
 
 <body>
     <?php
-    include 'sidebar_admin.html';
+    include 'sidebar_admin.php';
     include 'header_admin.php';
     ?>
     <div class="main">

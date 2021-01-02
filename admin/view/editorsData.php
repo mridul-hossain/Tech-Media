@@ -47,7 +47,7 @@ $editors = fetchAllEditors();
 <body>
     <?php
     include 'header_admin.php';
-    include 'sidebar_admin.html';
+    include 'sidebar_admin.php';
     ?>
 
     <form>

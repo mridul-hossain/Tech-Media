@@ -24,7 +24,7 @@ $info = fetchProfile($_SESSION['username']);
 
 <body>
     <?php
-    include 'sidebar_admin.html';
+    include 'sidebar_admin.php';
     include 'header_admin.php';
     ?>
     <form method="post" action="../controllers/updateAdminInfo.php" enctype="multipart/form-data">

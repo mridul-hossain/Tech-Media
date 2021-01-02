@@ -24,7 +24,7 @@ $info = fetchUser($_GET['id']);
 
 <body>
     <?php
-    include 'sidebar_admin.html';
+    include 'sidebar_admin.php';
     include 'header_admin.php';
     ?>
     <form method="post" action="../controllers/updateUserInfo.php" enctype="multipart/form-data">
