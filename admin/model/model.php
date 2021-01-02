@@ -171,19 +171,46 @@ function showUser($id)
 
     return $row;
 }
+function addAdmin($data)
+{
+    $conn = db_conn();
+    $query = "INSERT INTO admin(pass, name, phone, email, city, country, dob, username, gender) VALUES(:pass,:name,:phone,:email,:city,:country,:dob,:username,:gender)";
+    try {
+        $stmt = $conn->prepare($query);
+        $stmt->execute([
+            ':pass' => $data['pass'],
+            ':name' => $data['name'],
+            ':phone' => $data['phone'],
+            ':email' => $data['email'],
+            ':city' => $data['city'],
+            ':country' => $data['country'],
+            ':dob' => $data['dob'],
+            ':username' => $data['username'],
+            ':gender' => $data['gender']
+        ]);
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+
+    $conn = null;
+    return true;
+}
 function addEditor($data)
 {
     $conn = db_conn();
-    $selectQuery = "INSERT into user (Name, Surname, Username, Password, image)
-VALUES (:name, :surname, :username, :password, :image)";
+    $query = "INSERT INTO editor(pass, name, phone, email, city, country, dob, username, gender) VALUES(:pass,:name,:phone,:email,:city,:country,:dob,:username,:gender)";
     try {
-        $stmt = $conn->prepare($selectQuery);
+        $stmt = $conn->prepare($query);
         $stmt->execute([
+            ':pass' => $data['pass'],
             ':name' => $data['name'],
-            ':surname' => $data['surname'],
+            ':phone' => $data['phone'],
+            ':email' => $data['email'],
+            ':city' => $data['city'],
+            ':country' => $data['country'],
+            ':dob' => $data['dob'],
             ':username' => $data['username'],
-            ':password' => $data['password'],
-            ':image' => $data['image']
+            ':gender' => $data['gender']
         ]);
     } catch (PDOException $e) {
         echo $e->getMessage();

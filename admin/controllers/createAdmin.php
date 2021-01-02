@@ -36,15 +36,10 @@ if (isset($_POST['Submit'])) {
     } else if (empty($_POST["phone"])) {
         header('Location: ../view/addAdmin.php?phoneErr=*Type your phone number.');
     } else {
-        if (addEditor($data)) {
-            header('Location: ../Login.php');
+        if (addAdmin($data)) {
+            header('Location: ../view/addAdmin.php');
         }
     }
-
-    // if(addEditor($data))
-    // {
-    // 	header('Location: ../view/addAdmin.php');
-    // }
 } else {
     echo "Please try again!";
 }

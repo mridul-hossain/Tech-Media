@@ -37,14 +37,9 @@ if (isset($_POST['Submit'])) {
         header('Location: ../view/addEditor.php?phoneErr=*Type your phone number.');
     } else {
         if (addEditor($data)) {
-            header('Location: ../Login.php');
+            header('Location: ../view/addAdmin.php');
         }
     }
-
-    // if(addEditor($data))
-    // {
-    // 	header('Location: ../view/addEditor.php');
-    // }
 } else {
     echo "Please try again!";
 }
