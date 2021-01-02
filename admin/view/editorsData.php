@@ -82,6 +82,7 @@ $editors = fetchAllEditors();
                                     <td><?php echo $editor["address"] ?></td>
                                     <td><?php echo $editor["city"] ?></td>
                                     <td><?php echo $editor["country"] ?></td>
+                                    <td><a href="editEditor.php?id=<?php echo $editor['id'] ?>">Edit</a>&nbsp<a href="../controllers/deleteEditor.php?id=<?php echo $editor['id'] ?>">Delete</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

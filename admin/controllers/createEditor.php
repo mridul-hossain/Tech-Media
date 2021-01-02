@@ -1,5 +1,5 @@
 <?php
-require_once '../Model_.php';
+require_once '../model/model.php';
 
 if (isset($_POST['Submit'])) {
 
@@ -37,7 +37,7 @@ if (isset($_POST['Submit'])) {
         header('Location: ../view/addEditor.php?phoneErr=*Type your phone number.');
     } else {
         if (addEditor($data)) {
-            header('Location: ../view/addAdmin.php');
+            header('Location: ../view/addEditor.php');
         }
     }
 } else {

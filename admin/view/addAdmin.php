@@ -59,39 +59,32 @@
                 </div>
                 <div class="items">
                     <input type="text" name="name">
-                    <span><?php if (isset($_GET['nameErr'])) echo $_GET['nameErr']; ?><br><br>
-                        <input type="email" name="email" style="position: relative; bottom: 3px">
-                        <span><?php if (isset($_GET['emailErr'])) echo $_GET['emailErr']; ?></span><br><br>
-                        <input type="radio" id="male" name="gender" value="Male" style="position: relative; bottom: 6px">
-                        <label for="male" style="position: relative; bottom: 6px">Male</label>
-                        <input type="radio" id="female" name="gender" value="Female" style="position: relative; bottom: 6px">
-                        <label for="female" style="position: relative; bottom: 6px">Female</label>
-                        <span><?php if (isset($_GET['genderErr'])) echo $_GET['genderErr']; ?><br><br>
-                            <input type="text" name="username" style="position: relative; bottom: 8px">
-                            <span><?php if (isset($_GET['usernameErr'])) echo $_GET['usernameErr']; ?><br><br>
-                                <input type="text" name="password" style="position: relative; bottom: 8px">
-                                <span><?php if (isset($_GET['passwordErr'])) echo $_GET['passwordErr']; ?><br><br>
-                                    <input type="text" name="cpassword" style="position: relative; bottom: 8px">
-                                    <span><?php if (isset($_GET['cpasswordErr'])) echo $_GET['cpasswordErr']; ?><br><br>
-
-
-
-
-
-                                        <div style="position: relative; bottom: 2px">
-                                            <input type="date" name="dob" style="float: left;">
-                                        </div>
-                                        <span><?php if (isset($_GET['dobErr'])) echo $_GET['dobErr']; ?>
-
-                </div><br><br>
+                    <span class="text_error"><?php if (isset($_GET['nameErr'])) echo $_GET['nameErr']; ?></span><br><br>
+                    <input type="email" name="email" style="position: relative; bottom: 3px">
+                    <span class="text_error"><?php if (isset($_GET['emailErr'])) echo $_GET['emailErr']; ?></span><br><br>
+                    <input type="radio" id="male" name="gender" value="Male" style="position: relative; bottom: 6px">
+                    <label for="male" style="position: relative; bottom: 6px">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female" style="position: relative; bottom: 6px">
+                    <label for="female" style="position: relative; bottom: 6px">Female</label>
+                    <span class="text_error"><?php if (isset($_GET['genderErr'])) echo $_GET['genderErr']; ?></span><br><br>
+                    <input type="text" name="username" style="position: relative; bottom: 8px">
+                    <span class="text_error"><?php if (isset($_GET['usernameErr'])) echo $_GET['usernameErr']; ?></span><br><br>
+                    <input type="text" name="password" style="position: relative; bottom: 8px">
+                    <span class="text_error"><?php if (isset($_GET['passwordErr'])) echo $_GET['passwordErr']; ?></span><br><br>
+                    <input type="text" name="cpassword" style="position: relative; bottom: 8px">
+                    <span class="text_error"><?php if (isset($_GET['cpasswordErr'])) echo $_GET['cpasswordErr']; ?></span><br><br>
+                    <div style="position: relative; bottom: 2px">
+                        <input type="date" name="dob" style="float: left;">
+                    </div>
+                    <span class="text_error"><?php if (isset($_GET['dobErr'])) echo $_GET['dobErr']; ?></span>
+                </div><br><br>  
                 <input type="text" name="city" style="position: relative; bottom: 1px">
-                <span><?php if (isset($_GET['cityErr'])) echo $_GET['cityErr']; ?><br><br>
-                    <input type="text" name="country" style="position: relative; bottom: 1px">
-                    <span><?php if (isset($_GET['countryErr'])) echo $_GET['countryErr']; ?><br><br>
-                        <input type="text" name="phone" style="position: relative; bottom: 1px">
-                        <span><?php if (isset($_GET['phoneErr'])) echo $_GET['phoneErr']; ?><br><br>
-                            
-                            <input type="submit" name="Submit" style="position: relative; float: left;">
+                <span class="text_error"><?php if (isset($_GET['cityErr'])) echo $_GET['cityErr']; ?></span><br><br>
+                <input type="text" name="country" style="position: relative; bottom: 1px">
+                <span class="text_error"><?php if (isset($_GET['countryErr'])) echo $_GET['countryErr']; ?></span><br><br>
+                <input type="text" name="phone" style="position: relative; bottom: 1px">
+                <span class="text_error"><?php if (isset($_GET['phoneErr'])) echo $_GET['phoneErr']; ?></span><br><br>
+                <input type="submit" name="Submit" style="position: relative; float: left;">
             </fieldset>
         </div>
 
