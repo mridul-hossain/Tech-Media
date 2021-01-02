@@ -27,7 +27,7 @@ $info = fetchUser($_GET['id']);
     include 'sidebar_admin.php';
     include 'header_admin.php';
     ?>
-    <form method="post" action="../controllers/updateUserInfo.php" enctype="multipart/form-data">
+    <form method="post" action="../controllers/updateUser.php" enctype="multipart/form-data">
         <div class="main">
             <div class="divFieldset">
                 <fieldset class="fieldsetProfile">

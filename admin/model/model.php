@@ -224,11 +224,11 @@ function addEditor($data)
 function updateEditor($id, $data)
 {
     $conn = db_conn();
-    $selectQuery = "UPDATE user set Name = ?, Surname = ?, Username = ?, image = ? where ID = ?";
+    $selectQuery = "UPDATE editor SET name = ?, email = ?, country = ?, city = ?, phone = ?, address = ?, gender = ?, dob = ?, image = ? where username = ?";
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([
-            $data['name'], $data['surname'], $data['username'], $data['image'], $id
+            $data['name'], $data['email'], $data['country'], $data['city'], $data['phone'], $data['address'], $data['gender'], $data['dob'], $data['image'], $data['username']
         ]);
     } catch (PDOException $e) {
         echo $e->getMessage();
@@ -280,11 +280,11 @@ VALUES (:name, :surname, :username, :password, :image)";
 function updateUser($id, $data)
 {
     $conn = db_conn();
-    $selectQuery = "UPDATE user set Name = ?, Surname = ?, Username = ?, image = ? where ID = ?";
+    $selectQuery = "UPDATE user SET name = ?, email = ?, country = ?, city = ?, phone = ?, address = ?, gender = ?, dob = ?, image = ? where username = ?";
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([
-            $data['name'], $data['surname'], $data['username'], $data['image'], $id
+            $data['name'], $data['email'], $data['country'], $data['city'], $data['phone'], $data['address'], $data['gender'], $data['dob'], $data['image'], $data['username']
         ]);
     } catch (PDOException $e) {
         echo $e->getMessage();

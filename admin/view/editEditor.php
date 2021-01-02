@@ -27,7 +27,7 @@ $info = fetchEditor($_GET['id']);
     include 'sidebar_admin.php';
     include 'header_admin.php';
     ?>
-    <form method="post" action="../controllers/updateEditorInfo.php" enctype="multipart/form-data">
+    <form method="post" action="../controllers/updateEditor.php" enctype="multipart/form-data">
         <div class="main">
             <div class="divFieldset">
                 <fieldset class="fieldsetProfile">
