@@ -241,7 +241,7 @@ function updateEditor($id, $data)
 function removeEditor($id)
 {
     $conn = db_conn();
-    $selectQuery = "DELETE FROM `editor` WHERE `id` = ?";
+    $selectQuery = "DELETE FROM editor WHERE `id` = ?";
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([$id]);
@@ -297,7 +297,7 @@ function updateUser($id, $data)
 function removeUser($id)
 {
     $conn = db_conn();
-    $selectQuery = "DELETE FROM `user` WHERE `id` = ?";
+    $selectQuery = "DELETE FROM user WHERE `id` = ?";
     try {
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([$id]);

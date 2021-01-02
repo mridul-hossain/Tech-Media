@@ -22,11 +22,14 @@
             width: 400px;
             border-top: 2px solid black;
         }
+        label{
+            color: white;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <link rel="stylesheet" type="text/css" href="css/Prof.css">
     <link rel="stylesheet" type="text/css" href="css/basicStyling.css">
 
     <link rel="stylesheet" type="text/css" href="css/adminDashboard.css">
