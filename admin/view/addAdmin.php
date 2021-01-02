@@ -54,10 +54,7 @@ if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
                             <input type="submit" name="createEditor" value="Create">
                             <input type="reset">
                         </td>
-                        <td>
-                            <label for="fileToUpload">Upload Image:</label>
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                        </td>
+                       
                     </tr>
                 </table>
             </fieldset>
