@@ -224,6 +224,3 @@ function hideComment($id)
 
     return true;
 }
-
-
-?>

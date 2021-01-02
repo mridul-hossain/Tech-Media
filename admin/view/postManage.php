@@ -5,8 +5,17 @@ if ($_SESSION["usertype"] != "admin") {
 }
 require_once '../controllers/showApprovedPosts.php';
 $posts = fetchApprovedPosts();
-$commentData = fetchAllComments();
+//$commentData = fetchAllComments();
+if ($_SESSION['username'] == "" || $_SESSION["usertype"] != "admin") {
+    header("location:adminLogin.php");
+}
+require_once '../controllers/deletePost.php';
 
+$pendings = fetchPendingPosts();
+if (isset($_POST['declineBtn'])) {
+    $id = (int) $_POST['post_id']; // <-- gotta protect from sql injection.
+    deletePost($id);
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +27,8 @@ $commentData = fetchAllComments();
     <link rel="stylesheet" type="text/css" href="css/header_admin.css">
     <link rel="stylesheet" type="text/css" href="css/sidebar_admin.css">
     <link rel="stylesheet" type="text/css" href="../../HnF/Footer.css">
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
+
     <style>
         fieldset {
             background-color: #eeeeee;
@@ -57,9 +68,6 @@ $commentData = fetchAllComments();
                     </div>
                     <br>
                     <div style="font-family:Georgia, 'Times New Roman', Times, serif;"><?php echo $post["text"] ?></div>
-                </div>
-                <div>
-                    <input type="submit" name="removeBtn" id="removeBtn" value="Remove this post">
                 </div>
                 <div class="postCommentSeperator"></div>
                 <?php foreach ($commentData as $i => $cData) : if ($cData['post_id'] == $data['id']) { ?>

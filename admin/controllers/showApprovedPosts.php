@@ -6,3 +6,7 @@ function fetchApprovedPosts()
 {
     return showApprovedPosts();
 }
+function fetchAllComments()
+{
+    return showAllComments();
+}

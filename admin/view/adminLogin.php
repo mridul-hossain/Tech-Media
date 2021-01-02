@@ -18,6 +18,11 @@ try {
         );
         $count = $statement->rowCount();
         if ($count > 0) {
+            if (isset($_POST['remember'])) {
+
+                setcookie('username', $_POST['name'], time() + 60);
+                setcookie('password', $_POST['password'], time() + 60);
+            }
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["usertype"] = "admin";
             header("location:adminDashboard.php");
@@ -59,6 +64,8 @@ try {
                 <button type="button" id="show_password" name="show_password" style="background: dodgerblue;">Show</button>
                 <br>
                 <label class="sml_font text_error"> <?php echo $err; ?></label>
+                <input  type="checkbox" name="remember" id="remember">
+                <label  for="remember">Remember Me</label><br><br>
                 <div class="login_btn">
                     <input type="submit" name="submit" value="Login" onclick="validate()">
                 </div>
