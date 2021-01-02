@@ -1,9 +1,5 @@
 <?php
-session_start();
 require_once '../model/model.php';
-$id = $_GET['id'];
-
-if (removeEditor($id)) {
-    $_GET['id'] = null;
+if (removeEditor($_GET['editor_id'])) {
     header('Location: ../view/editorsData.php');
 }

@@ -1,9 +1,5 @@
 <?php
-session_start();
 require_once '../model/model.php';
-$id = $_GET['id'];
-
-if (removeUser($id)) {
-    $_GET['id'] = null;
+if (removeUser($_GET['user_id'])) {
     header('Location: ../view/usersData.php');
 }
