@@ -1,0 +1,70 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: #004528;
+}
+
+.contentProfile{
+	display: flex;
+}
+
+.fieldsetProfile{
+	background-color: black;
+	border-radius: 4px;
+	height: 400px;
+	box-shadow: 0 0 5px;
+	border-style: none;
+	outline: none;
+}
+
+.divFieldset{
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+.contentPending{
+	display: flex;
+}
+
+.post{
+	padding-top: 20px;
+}
+
+.errMessage{
+	color: red;
+	overflow: hidden;
+	display: block;
+
+opacity: 0;
+}
+
+.userBody{
+	display: flex;
+}
+
+.userTable{
+	width: 420px;
+	height: 480px;
+	background: white;
+	/*margin: 50px auto;*/
+	top: 20%;
+	left:30%;
+	position: absolute;
+	box-shadow: 8px 8px 50px #000;
+}
+.tableDesign{
+	padding: 4px;
+}
+
+.searchUserTable{
+	display: none;
+	margin-left: 20px;
+	margin-top: 20px;
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 0 0 5px;
+	padding: 100px;
+}
