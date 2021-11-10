@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    /* height: 50px;
+    width: 100%;
+    background-color: dodgerblue;
+    position: relative;
+	box-shadow: 0 0 5px; */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: dodgerblue;
+    color: white;
+    text-align: center;
+    height: 40px;
+}
+
+.footer .footerContent {
+    font-family: arial;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}

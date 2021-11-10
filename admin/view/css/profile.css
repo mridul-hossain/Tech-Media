@@ -1,0 +1,252 @@
+@import "Header.css";
+@import "Sidebar.css";
+@import "Footer.css";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e6e6e6;
+}
+
+.contentProfile {
+    display: flex;
+}
+
+.fieldsetProfile {
+    width: 750px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 5px;
+    border-style: none;
+    outline: none;
+    padding: 10px;
+}
+
+.divFieldset {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.profiletable {
+    margin-right: auto;
+    margin-left: auto;
+    font-family: arial;
+    font-size: 15px;
+}
+
+.profileTableInput {
+    width: 400px;
+    height: 20px;
+    border: none;
+    border-bottom: 1px solid black;
+    border-color: #99ccff;
+    padding: 4px;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.profileTableLabel {
+    padding-top: 20px;
+    color: #666666;
+}
+
+.profileImage {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.profileImageDiv {
+    margin-left: 600px;
+}
+
+.profileTableHead {
+    font-family: arial;
+    font-size: 28px;
+}
+
+.profileTableButtonDiv {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.profileTableButtonSave {
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    background-color: #cce6ff;
+    outline: none;
+}
+
+.profileTableButtonSave:hover {
+    background-color: #99ccff;
+}
+
+.profileTableButtonDelete {
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    background-color: #cce6ff;
+    outline: none;
+}
+
+.profileTableButtonDelete:hover {
+    background-color: #ffb3b3;
+}
+
+.contentPending {
+    display: flex;
+}
+
+.post {
+    padding-top: 20px;
+}
+
+.errMessage {
+    color: red;
+    overflow: hidden;
+    display: block;
+    opacity: 0;
+}
+
+.errMessagePHP {
+    color: red;
+}
+
+.userBody {
+    display: flex;
+}
+
+.userTable {
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 5px;
+    padding: 100px;
+}
+
+.tableDesign {
+    padding: 4px;
+}
+
+.searchUserTable {
+    display: none;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 5px;
+    padding: 100px;
+}
+
+.postMainDiv {
+    display: grid;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px;
+    padding: 10px;
+    width: 650px;
+    margin: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: arial;
+}
+
+.postUserImage {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.postCommentUserImage {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.postCommentSeperator {
+    width: auto;
+    border-top: 1px solid black;
+    border-color: #bfbfbf;
+}
+
+.postHeader {
+    padding: 10px;
+}
+
+.postHeaderContent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.postHeaderText {
+    margin: 8px;
+}
+
+.postHeaderName {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.postHeaderTime {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.postComment {
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    background-color: #e6e6e6;
+    border-radius: 10px;
+}
+
+.postCommentName {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.postCommentTime {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.postContent {
+    padding: 10px;
+}
+
+.postTitle {
+    font-size: 20px;
+}
+
+.commentTextArea {
+    height: auto;
+    width: 80%;
+    outline: none;
+}
+
+.commentDiv {
+    margin: 10px;
+}
+
+.dashboardDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.dashboardDivPosts {}

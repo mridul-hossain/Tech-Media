@@ -1,0 +1,1 @@
+UPDATE post SET approved = 1 WHERE id=2
